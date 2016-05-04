@@ -6,8 +6,8 @@ specification for formatting tools.
 
 ## The formatting RFC process
 
-See [RFC TODO](TODO) for more details. Where this process is under-specified,
-see the process for [Rust RFCs](https://github.com/rust-lang/rfcs).
+See [RFC 1607](https://github.com/rust-lang/rfcs/pull/1607) for more details.
+Where this process is under-specified, see the process for [Rust RFCs](https://github.com/rust-lang/rfcs).
 
 * If there is no single, obvious style, then open a GitHub issue on the
   fmt-rfcs repo for initial discussion. This initial discussion should identify
