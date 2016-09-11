@@ -12,6 +12,10 @@ Where this process is under-specified, see the process for [Rust RFCs](https://g
 * If there is no single, obvious style, then open a GitHub issue on the
   fmt-rfcs repo for initial discussion. This initial discussion should identify
   which Rustfmt options are required to enforce the guideline.
+  - Search for existing issues and RFCs that may have already covered the topic.
+    To discourage endless bikeshedding, the style team will close new discussions
+    on old topics unless they provide new information that was not previously
+    considered.
 * Implement the style in rustfmt (behind an option if it is not the current
   default). In exceptional circumstances (such as where the implementation would
   require very deep changes to rustfmt), this step may be skipped.
