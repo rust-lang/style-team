@@ -19,10 +19,17 @@ Where this process is under-specified, see the process for [Rust RFCs](https://g
 * Implement the style in rustfmt (behind an option if it is not the current
   default). In exceptional circumstances (such as where the implementation would
   require very deep changes to rustfmt), this step may be skipped.
+* Reach rough consensus on the issue.
 * Write an RFC formalising the formatting convention and referencing the
   implementation, submit as a PR to fmt-rfcs. The RFC should include the default
   values for options to enforce the guideline and which non-default options
   should be kept.
+
+  The PR should modify the in-repo style guide to present a user-friendly version
+  of the proposed RFC (the RFC itself should be precise enough to specify the
+  implementation in Rustfmt).
+
+  The PR should modify the running example to reflect the guidelines in the RFC.
 * The RFC PR will be triaged by the style team and either assigned to a team
   member for [shepherding](https://github.com/rust-lang/rfcs#the-role-of-the-shepherd),
   or closed.
