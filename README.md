@@ -111,3 +111,33 @@ interested in working on the implementation for an 'active' RFC, but cannot
 determine if someone else is already working on it, feel free to ask (e.g. by
 leaving a comment on the associated issue).
   
+## Guiding principles
+
+When deciding on style guidelines, discussion should be steered by the following
+principles (in priority order):
+
+* readability
+    - scan-ability
+    - avoiding misleading formatting
+    - accessibility - readable and editable by users using the the widest
+      variety of hardware, including non-visual accessibility interfaces
+    - readability of code when quoted in rustc error messages
+
+* aesthetics
+    - sense of 'beauty'
+    - consistent with other languages/tools
+
+* specifics
+    - compatibility with version control practices - preserving diffs,
+      merge-friendliness, etc.
+    - preventing right-ward drift
+    - minimising vertical space
+
+* application
+    - ease of manual application
+    - ease of implementation (in Rustfmt, and in other tools/editors/code generators)
+    - internal consistency
+    - simplicity of formatting rules
+
+To see how these principles were decided, see
+[issue 4](https://github.com/rust-lang-nursery/fmt-rfcs/issues/4).
