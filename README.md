@@ -4,6 +4,9 @@ This repository exists to decide on a code style for Rust code, to be enforced
 by the Rustfmt tool. Accepted RFCs live in the `text` directory and form a
 specification for formatting tools.
 
+The [Rust style guide](guide/guide.md) in this repository documents this style,
+including examples.
+
 ## The formatting RFC process
 
 See [RFC 1607](https://github.com/rust-lang/rfcs/pull/1607) for more details.
