@@ -110,7 +110,7 @@ The author of an RFC is not required to implement the guideline. If you are
 interested in working on the implementation for an 'active' RFC, but cannot
 determine if someone else is already working on it, feel free to ask (e.g. by
 leaving a comment on the associated issue).
-  
+
 ## Guiding principles
 
 When deciding on style guidelines, discussion should be steered by the following
