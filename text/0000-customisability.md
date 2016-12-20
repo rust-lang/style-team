@@ -13,16 +13,22 @@ encouraged.
 # Details
 [details]: #details
 
-Users may create a `rustfmt.toml` or `.rustfmt.toml` in their project directory
-or any parent of that directory. Rustfmt will read options from the first toml
-file (scanning up the directory tree). If an option is not present in the file,
-Rustfmt uses the default option (as specified by the code style process RFCs).
-The set of options available is not specified at this time.
+A formatter such as Rustfmt may be customised by the user. These customisations
+may be saved for a project using a cusomtisation file. For example, Rustfmt can
+be customised by either a `rustfmt.toml` or `.rustfmt.toml` in their project
+directory or any parent of that directory. Rustfmt will read options from the
+first toml file (scanning up the directory tree). If an option is not present in
+the file, Rustfmt uses the default option (as specified by the code style
+process RFCs). The set of options available is not specified at this time; it
+will be part of the style RFC process to enumerate them.
+
+A formatting tool may be customised in other ways, but must stick to the options
+and defaults specified by the style RFCs.
 
 Customisation will be documented, but explicitly discouraged.
 
 All official Rust projects which use Rustfmt *must* use the default style and
-*must not* include a `rustfmt.toml`.
+*must not* include a customisation file.
 
 # Implementation
 [implementation]: #implementation
