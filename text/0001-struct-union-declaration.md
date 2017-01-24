@@ -47,6 +47,11 @@ union Foo {
 # Implementation
 [implementation]: #implementation
 
+`rustfmt` currently formats structs correctly, except for the case where a long
+type name needs to be indented onto its own line.
+
+Unions are currently not supported by `rustfmt:` 
+[rust-lang-nursery/rustfmt#1157](https://github.com/rust-lang-nursery/rustfmt/issues/1157)
 
 
 # Rationale
@@ -70,5 +75,4 @@ Some prefer to omit the trailing comma from the final struct field.
 # Unresolved questions
 [unresolved]: #unresolved-questions
 
-Unions have not been stabilized yet, and thus the syntax could possibly change. `rustfmt` does not
-currently have testing for union declarations.
+Unions have not been stabilized yet, and thus the syntax could possibly change.
