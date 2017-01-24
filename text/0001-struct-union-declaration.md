@@ -56,6 +56,8 @@ struct Foo {
 
 Requiring a trailing comma on the last struct field has the following benefits:
 
+- Follows the principle to use a trailing comma when it followed by newline: 
+  [#42](https://github.com/rust-lang-nursery/fmt-rfcs/issues/42)
 - Avoids the need to add a comma when adding another field
 - Avoids the need to delete a comma with deleting a field
 - Allows easier copying of fields between different structs
