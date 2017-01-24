@@ -45,6 +45,15 @@ struct Foo {
 }
 ```
 
+The same guidelines are used for untagged unions declarations.
+
+```rust
+union Foo {
+    a: A,
+    b: B,
+}
+```
+
 
 # Implementation
 [implementation]: #implementation
