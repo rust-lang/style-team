@@ -6,15 +6,15 @@
 # Summary
 [summary]: #summary
 
-Customisation of Rustfmt should be allowed (via a `rustfmt.toml` file), but not
-encouraged.
+Customisation of Rustfmt should be allowed (via a `rustfmt.toml` file), but
+discouraged.
 
 
 # Details
 [details]: #details
 
 A formatter such as Rustfmt may be customised by the user. These customisations
-may be saved for a project using a cusomtisation file. For example, Rustfmt can
+may be saved for a project using a customisation file. For example, Rustfmt can
 be customised by either a `rustfmt.toml` or `.rustfmt.toml` in their project
 directory or any parent of that directory. Rustfmt will read options from the
 first toml file (scanning up the directory tree). If an option is not present in
@@ -34,7 +34,8 @@ All official Rust projects which use Rustfmt *must* use the default style and
 [implementation]: #implementation
 
 Rustfmt already allows customisation via `rustfmt.toml`. There is nothing more
-to implement here. Over time, I expect the number of options to be reduced.
+to implement here. During the style RFC process, I expect the number of options
+to be reduced.
 
 See [config.rs](https://github.com/rust-lang-nursery/rustfmt/blob/master/src/config.rs)
 for the definition of the config file.
@@ -50,16 +51,18 @@ encourages sharing small crates between projects, this is likely to be a bigger
 advantage in Rust than, say, C++.
 
 However, code style is an intensely subjective matter and many programmers feel
-strongly about it. Furthermore, the Rust community encourages diversity,
-individualism, and democracy as part of its culture, and tends not to accept
-dictated decisions. It is therefore likely that if Rustfmt only enforced a
-single style, it would be rejected by a significant proportion of the community.
+strongly about it. It is therefore likely that if Rustfmt only enforced a
+single style, the tool would be rejected by a significant proportion of the
+community.
 
-We believe there is more benefit in a large proportion of the community using
-Rustfmt in any configuration, than in a small proportion using it in a single
-configuration. We also believe that the best approach to encouraging use of the
-default style is to lead by example and exert cultural pressure, rather than
-enforcement by coercion.
+The advantages of a single style are only realised if a critical mass of the
+community follow that style. We believe that we will not reach that critical
+mass. Therefore, it is better to allow customisation so that more projects will
+use rustfmt (in any configuration).
+
+We also believe that the best approach to encouraging use of the default style
+is to lead by example and exert cultural pressure, rather than enforcement by
+coercion.
 
 # Alternatives
 [alternatives]: #alternatives
