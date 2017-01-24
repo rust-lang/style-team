@@ -23,17 +23,6 @@ struct Foo {
 }
 ```
 
-If and only if the opening brace does not fit within the right margin, it is pulled down to its 
-own line.
-
-```rust
-struct Foo /* Margin ends at `Foo` */
-{
-    a: A,
-    b: B,
-}
-```
-
 If and only if the type name does not fit within the right margin, it is pulled down to its 
 own line and indented again.
 
