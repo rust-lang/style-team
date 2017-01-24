@@ -119,18 +119,19 @@ break, indent exactly once from the indentation of `type`.
 #### Single-line
 
 ```rust
-[pub] type FooBar = Baz<i32>;
+type FooBar = Baz<i32>;
+pub type FooBar = Baz<i32>;
 ```
 
 #### Multi-line
 
 ```rust
-[pub] type ShorterName =
-  VeryLongName<Perhaps, With, Type, Parameters>;
+type ShorterName =
+    VeryLongName<Perhaps, With, Type, Parameters>;
 
-[pub] type
-  QuiteLongName =
-  FooBarBazQuxx;
+pub type
+    QuiteLongName =
+    FooBarBazQuxx;
 ```
 
 ### Tuples and tuple structs
