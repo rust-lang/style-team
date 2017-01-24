@@ -127,11 +127,12 @@ match res {
     return FourAndNotCond;
   },
 
-  Ok(x) if x > 10
-  | Some(x) if x < -10
-  => return AbsGreaterThanTen,
+  Ok(x) if x > 10 => return GreaterThanTen,
 
-  Ok(5) => {},
+  Ok(5)
+  | Ok(-5)
+  => {},
+
   Ok(_) => {
     println!("We didn't receive any of the normal numbers!");
     return WeirdNumber;
