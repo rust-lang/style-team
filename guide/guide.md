@@ -126,7 +126,7 @@ let y = (11, 22, 33);
 
 ### Enums
 
-In the declaration, put each variant on it's own line.
+In the declaration, put each variant on its own line.
 
 Format each variant accordingly as either a `struct`, `tuple struct`, or ident,
 which doesn't require special formatting.
