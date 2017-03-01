@@ -59,7 +59,7 @@ Unions are currently not supported by `rustfmt:`
 
 Requiring a trailing comma on the last struct field has the following benefits:
 
-- Follows the principle to use a trailing comma when it followed by newline: 
+- Follows the principle to use a trailing comma when it is followed by a newline: 
   [#42](https://github.com/rust-lang-nursery/fmt-rfcs/issues/42)
 - Avoids the need to add a comma when adding another field
 - Avoids the need to delete a comma with deleting a field
