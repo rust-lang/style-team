@@ -77,23 +77,27 @@ pub fn format_fn_args<I>(items: I, width: usize, offset: Indent, config: &Config
                 ListTactic::LimitedHorizontalVertical(config.fn_call_width))
 }
 
-pub fn format_item_list<I>(items: I,
-                           width: usize,
-                           offset: Indent,
-                           config: &Config)
-                           -> Option<String>
-    where I: Iterator<Item = ListItem>
+pub fn format_item_list<I>(
+    items: I,
+    width: usize,
+    offset: Indent,
+    config: &Config,
+) -> Option<String>
+where
+    I: Iterator<Item = ListItem>,
 {
     list_helper(items, width, offset, config, ListTactic::HorizontalVertical)
 }
 
-pub fn list_helper<I>(items: I,
-                      width: usize,
-                      offset: Indent,
-                      config: &Config,
-                      tactic: ListTactic)
-                      -> Option<String>
-    where I: Iterator<Item = ListItem>
+pub fn list_helper<I>(
+    items: I,
+    width: usize,
+    offset: Indent,
+    config: &Config,
+    tactic: ListTactic,
+) -> Option<String>
+where
+    I: Iterator<Item = ListItem>,
 {
     let item_vec: Vec<_> = items.collect();
     let tactic = definitive_tactic(&item_vec, tactic, width);
@@ -159,9 +163,8 @@ pub fn definitive_tactic<I, T>(items: I, tactic: ListTactic, width: usize) -> De
     where I: IntoIterator<Item = T> + Clone,
           T: AsRef<ListItem>
 {
-    let pre_line_comments = items.clone()
-        .into_iter()
-        .any(|item| item.as_ref().has_line_pre_comment());
+    let pre_line_comments =
+        items.clone().into_iter().any(|item| item.as_ref().has_line_pre_comment());
 
     let limit = match tactic {
         _ if pre_line_comments => return DefinitiveListTactic::Vertical,
@@ -319,7 +322,8 @@ pub fn write_list<I, T>(items: I, formatting: &ListFormatting) -> Option<String>
 }
 
 pub struct ListItems<'a, I, F1, F2, F3>
-    where I: Iterator
+where
+    I: Iterator,
 {
     codemap: &'a CodeMap,
     inner: Peekable<I>,
@@ -332,10 +336,11 @@ pub struct ListItems<'a, I, F1, F2, F3>
 }
 
 impl<'a, T, I, F1, F2, F3> Iterator for ListItems<'a, I, F1, F2, F3>
-    where I: Iterator<Item = T>,
-          F1: Fn(&T) -> BytePos,
-          F2: Fn(&T) -> BytePos,
-          F3: Fn(&T) -> Option<String>
+where
+    I: Iterator<Item = T>,
+    F1: Fn(&T) -> BytePos,
+    F2: Fn(&T) -> BytePos,
+    F3: Fn(&T) -> Option<String>,
 {
     type Item = ListItem;
 
@@ -443,19 +448,21 @@ impl<'a, T, I, F1, F2, F3> Iterator for ListItems<'a, I, F1, F2, F3>
 }
 
 // Creates an iterator over a list's items with associated comments.
-pub fn itemize_list<'a, T, I, F1, F2, F3>(codemap: &'a CodeMap,
-                                          inner: I,
-                                          terminator: &'a str,
-                                          get_lo: F1,
-                                          get_hi: F2,
-                                          get_item_string: F3,
-                                          prev_span_end: BytePos,
-                                          next_span_start: BytePos)
-                                          -> ListItems<'a, I, F1, F2, F3>
-    where I: Iterator<Item = T>,
-          F1: Fn(&T) -> BytePos,
-          F2: Fn(&T) -> BytePos,
-          F3: Fn(&T) -> Option<String>
+pub fn itemize_list<'a, T, I, F1, F2, F3>(
+    codemap: &'a CodeMap,
+    inner: I,
+    terminator: &'a str,
+    get_lo: F1,
+    get_hi: F2,
+    get_item_string: F3,
+    prev_span_end: BytePos,
+    next_span_start: BytePos,
+) -> ListItems<'a, I, F1, F2, F3>
+where
+    I: Iterator<Item = T>,
+    F1: Fn(&T) -> BytePos,
+    F2: Fn(&T) -> BytePos,
+    F3: Fn(&T) -> Option<String>,
 {
     ListItems {
         codemap: codemap,
@@ -469,9 +476,10 @@ pub fn itemize_list<'a, T, I, F1, F2, F3>(codemap: &'a CodeMap,
     }
 }
 
-fn needs_trailing_separator(separator_tactic: SeparatorTactic,
-                            list_tactic: DefinitiveListTactic)
-                            -> bool {
+fn needs_trailing_separator(
+    separator_tactic: SeparatorTactic,
+    list_tactic: DefinitiveListTactic,
+) -> bool {
     match separator_tactic {
         SeparatorTactic::Always => true,
         SeparatorTactic::Vertical => list_tactic == DefinitiveListTactic::Vertical,
@@ -481,12 +489,13 @@ fn needs_trailing_separator(separator_tactic: SeparatorTactic,
 
 /// Returns the count and total width of the list items.
 fn calculate_width<I, T>(items: I) -> (usize, usize)
-    where I: IntoIterator<Item = T>,
-          T: AsRef<ListItem>
+where
+    I: IntoIterator<Item = T>,
+    T: AsRef<ListItem>,
 {
-    items.into_iter()
-        .map(|item| total_item_width(item.as_ref()))
-        .fold((0, 0), |acc, l| (acc.0 + 1, acc.1 + l))
+    items.into_iter().map(|item| total_item_width(item.as_ref())).fold((0, 0), |acc, l| {
+        (acc.0 + 1, acc.1 + l)
+    })
 }
 
 fn total_item_width(item: &ListItem) -> usize {
