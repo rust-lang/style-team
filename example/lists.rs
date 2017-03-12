@@ -68,7 +68,8 @@ pub struct ListFormatting<'a> {
 }
 
 pub fn format_fn_args<I>(items: I, width: usize, offset: Indent, config: &Config) -> Option<String>
-    where I: Iterator<Item = ListItem>
+where
+    I: Iterator<Item = ListItem>,
 {
     list_helper(items,
                 width,
@@ -160,8 +161,9 @@ pub enum DefinitiveListTactic {
 }
 
 pub fn definitive_tactic<I, T>(items: I, tactic: ListTactic, width: usize) -> DefinitiveListTactic
-    where I: IntoIterator<Item = T> + Clone,
-          T: AsRef<ListItem>
+where
+    I: IntoIterator<Item = T> + Clone,
+    T: AsRef<ListItem>,
 {
     let pre_line_comments =
         items.clone().into_iter().any(|item| item.as_ref().has_line_pre_comment());
@@ -191,8 +193,9 @@ pub fn definitive_tactic<I, T>(items: I, tactic: ListTactic, width: usize) -> De
 // Format a list of commented items into a string.
 // TODO: add unit tests
 pub fn write_list<I, T>(items: I, formatting: &ListFormatting) -> Option<String>
-    where I: IntoIterator<Item = T>,
-          T: AsRef<ListItem>
+where
+    I: IntoIterator<Item = T>,
+    T: AsRef<ListItem>,
 {
     let tactic = formatting.tactic;
     let sep_len = formatting.separator.len();
