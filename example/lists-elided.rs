@@ -176,13 +176,6 @@ where
     let sep_len = ", ".len(); // FIXME: make more generic?
     let total_sep_len = sep_len * sep_count.checked_sub(1).unwrap_or(0);
     let real_total = total_width + total_sep_len;
-
-    if real_total <= limit && !pre_line_comments &&
-       !items.into_iter().any(|item| item.as_ref().is_multiline()) {
-        DefinitiveListTactic::Horizontal
-    } else {
-        DefinitiveListTactic::Vertical
-    }
 }
 
 // Format a list of commented items into a string.
