@@ -17,10 +17,10 @@ use Indent;
 use comment::{FindUncommented, rewrite_comment, find_comment_end};
 use config::Config;
 
-#[derive(Eq, PartialEq, Debug, Copy, Clone)]
 /// Formatting tactic for lists. This will be cast down to a
 /// DefinitiveListTactic depending on the number and length of the items and
 /// their comments.
+#[derive(Eq, PartialEq, Debug, Copy, Clone)]
 pub enum ListTactic {
     // One item per row.
     Vertical,
