@@ -71,11 +71,13 @@ pub fn format_fn_args<I>(items: I, width: usize, offset: Indent, config: &Config
 where
     I: Iterator<Item = ListItem>,
 {
-    list_helper(items,
-                width,
-                offset,
-                config,
-                ListTactic::LimitedHorizontalVertical(config.fn_call_width))
+    list_helper(
+        items,
+        width,
+        offset,
+        config,
+        ListTactic::LimitedHorizontalVertical(config.fn_call_width),
+    )
 }
 
 pub fn format_item_list<I>(
@@ -135,11 +137,15 @@ pub struct ListItem {
 impl ListItem {
     pub fn is_multiline(&self) -> bool {
         self.item.as_ref().map_or(false, |s| s.contains('\n')) || self.pre_comment.is_some() ||
-        self.post_comment.as_ref().map_or(false, |s| s.contains('\n'))
+        self.post_comment
+            .as_ref()
+            .map_or(false, |s| s.contains('\n'))
     }
 
     pub fn has_line_pre_comment(&self) -> bool {
-        self.pre_comment.as_ref().map_or(false, |comment| comment.starts_with("//"))
+        self.pre_comment
+            .as_ref()
+            .map_or(false, |comment| comment.starts_with("//"))
     }
 
     pub fn from_str<S: Into<String>>(s: S) -> ListItem {
@@ -165,8 +171,10 @@ where
     I: IntoIterator<Item = T> + Clone,
     T: AsRef<ListItem>,
 {
-    let pre_line_comments =
-        items.clone().into_iter().any(|item| item.as_ref().has_line_pre_comment());
+    let pre_line_comments = items
+        .clone()
+        .into_iter()
+        .any(|item| item.as_ref().has_line_pre_comment());
 
     let limit = match tactic {
         _ if pre_line_comments => return DefinitiveListTactic::Vertical,
@@ -183,7 +191,9 @@ where
     let real_total = total_width + total_sep_len;
 
     if real_total <= limit && !pre_line_comments &&
-       !items.into_iter().any(|item| item.as_ref().is_multiline()) {
+       !items
+            .into_iter()
+            .any(|item| item.as_ref().is_multiline()) {
         DefinitiveListTactic::Horizontal
     } else {
         DefinitiveListTactic::Vertical
@@ -262,11 +272,15 @@ where
             let block_mode = tactic != DefinitiveListTactic::Vertical;
             // Width restriction is only relevant in vertical mode.
             let max_width = formatting.width;
-            let comment = try_opt!(rewrite_comment(comment,
-                                                   block_mode,
-                                                   max_width,
-                                                   formatting.indent,
-                                                   formatting.config));
+            let comment = try_opt!(
+                rewrite_comment(
+                    comment,
+                    block_mode,
+                    max_width,
+                    formatting.indent,
+                    formatting.config,
+                ),
+            );
             result.push_str(&comment);
 
             if tactic == DefinitiveListTactic::Vertical {
@@ -282,11 +296,15 @@ where
         // Post-comments
         if tactic != DefinitiveListTactic::Vertical && item.post_comment.is_some() {
             let comment = item.post_comment.as_ref().unwrap();
-            let formatted_comment = try_opt!(rewrite_comment(comment,
-                                                             true,
-                                                             formatting.width,
-                                                             Indent::empty(),
-                                                             formatting.config));
+            let formatted_comment = try_opt!(
+                rewrite_comment(
+                    comment,
+                    true,
+                    formatting.width,
+                    Indent::empty(),
+                    formatting.config,
+                ),
+            );
 
             result.push(' ');
             result.push_str(&formatted_comment);
@@ -298,7 +316,10 @@ where
 
         if tactic == DefinitiveListTactic::Vertical && item.post_comment.is_some() {
             // 1 = space between item and comment.
-            let width = formatting.width.checked_sub(item_last_line_width + 1).unwrap_or(1);
+            let width = formatting
+                .width
+                .checked_sub(item_last_line_width + 1)
+                .unwrap_or(1);
             let mut offset = formatting.indent;
             offset.alignment += item_last_line_width + 1;
             let comment = item.post_comment.as_ref().unwrap();
@@ -496,9 +517,10 @@ where
     I: IntoIterator<Item = T>,
     T: AsRef<ListItem>,
 {
-    items.into_iter().map(|item| total_item_width(item.as_ref())).fold((0, 0), |acc, l| {
-        (acc.0 + 1, acc.1 + l)
-    })
+    items
+        .into_iter()
+        .map(|item| total_item_width(item.as_ref()))
+        .fold((0, 0), |acc, l| (acc.0 + 1, acc.1 + l))
 }
 
 fn total_item_width(item: &ListItem) -> usize {
