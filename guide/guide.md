@@ -142,6 +142,42 @@ enum FooBar {
 }
 ```
 
+### Structs and Unions
+
+Struct names follow on the same line as the `struct` keyword, with the opening
+brace on the same line when it fits within the right margin. All struct fields
+are indented once and end with a trailing comma. The closing brace is not
+indented and appears on its own line.
+
+```rust
+struct Foo {
+    a: A,
+    b: B,
+}
+```
+
+If and only if the type of a field does not fit within the right margin, it is
+pulled down to its own line and indented again.
+
+```rust
+struct Foo {
+    a: A,
+    long_name: 
+        LongType,
+}
+```
+
+The same guidelines are used for untagged union declarations.
+
+```rust
+union Foo {
+    a: A,
+    b: B,
+    long_name: 
+        LongType,
+}
+```
+
 ### macro\_rules!
 
 Use `{}` for the full definition of the macro.
@@ -216,7 +252,7 @@ if y {
 
  * Types shall be `PascalCase`,
  * Enum variants shall be `PascalCase`,
- * Struct members shall be `snake_case`,
+ * Struct fields shall be `snake_case`,
  * Function and method names shall be `snake_case`,
  * Local variables shall be `snake_case`,
  * Macro names shall be `snake_case`,
