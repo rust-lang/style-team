@@ -137,9 +137,9 @@ pub struct ListItem {
 impl ListItem {
     pub fn is_multiline(&self) -> bool {
         self.item.as_ref().map_or(false, |s| s.contains('\n')) || self.pre_comment.is_some() ||
-        self.post_comment
-            .as_ref()
-            .map_or(false, |s| s.contains('\n'))
+            self.post_comment
+                .as_ref()
+                .map_or(false, |s| s.contains('\n'))
     }
 
     pub fn has_line_pre_comment(&self) -> bool {
@@ -191,9 +191,8 @@ where
     let real_total = total_width + total_sep_len;
 
     if real_total <= limit && !pre_line_comments &&
-       !items
-            .into_iter()
-            .any(|item| item.as_ref().is_multiline()) {
+        !items.into_iter().any(|item| item.as_ref().is_multiline())
+    {
         DefinitiveListTactic::Horizontal
     } else {
         DefinitiveListTactic::Vertical
@@ -327,8 +326,8 @@ where
             debug!("Width = {}, offset = {:?}", width, offset);
             // Use block-style only for the last item or multiline comments.
             let block_style = !formatting.ends_with_newline && last ||
-                              comment.trim().contains('\n') ||
-                              comment.trim().len() > width;
+                comment.trim().contains('\n') ||
+                comment.trim().len() > width;
 
             let formatted_comment =
                 try_opt!(rewrite_comment(comment, block_style, width, offset, formatting.config));
@@ -525,8 +524,8 @@ where
 
 fn total_item_width(item: &ListItem) -> usize {
     comment_len(item.pre_comment.as_ref().map(|x| &(*x)[..])) +
-    comment_len(item.post_comment.as_ref().map(|x| &(*x)[..])) +
-    item.item.as_ref().map_or(0, |str| str.len())
+        comment_len(item.post_comment.as_ref().map(|x| &(*x)[..])) +
+        item.item.as_ref().map_or(0, |str| str.len())
 }
 
 fn comment_len(comment: Option<&str>) -> usize {
