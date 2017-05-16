@@ -261,6 +261,31 @@ Put spaces before and after `as`:
 let cstr = "Hi\0" as *const str as *const [u8] as *const std::os::raw::c_char;
 ```
 
+### Type Aliases
+
+A type alias should follow normal line break rules. If one must break the line,
+then do it after the `=` first, and after the `type` next. Keep the type alias
+and `=` on the same line. Keep `pub` and `type` on the same line. If one must
+break, indent exactly once from the indentation of `type`.
+
+#### Single-line
+
+```rust
+type FooBar = Baz<i32>;
+pub type FooBar = Baz<i32>;
+```
+
+#### Multi-line
+
+```rust
+type ShorterName =
+    VeryLongName<Perhaps, With, Type, Parameters>;
+
+pub type
+    QuiteLongName =
+    FooBarBazQuxx;
+```
+
 ### Tuples and tuple structs
 
 Write the type list as you would a parameter list to a function.
