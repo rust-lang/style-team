@@ -253,6 +253,46 @@ Do not put any spaces around the `.`.
 x.foo().bar().baz(x, y, z);
 ```
 
+### Match
+
+For a single-expression matcher to a single-expression matchee, which fits on
+one line, fit it on one line. If one needs to use an `if`, similarly, if it fits
+on one line, use only one line. If the match pattern does not fit on one line,
+first split before the `=>`, and then split before the `if`. These should all
+use the same indentation, except for `if`, which should be indented once, and
+for the matchee, which should be indented once. The `=>` should not be
+reindented.  When one uses multiple matchers, split by a `|`, put all matchers
+on separate lines, and put the `|` at the beginning of the line.  One may add
+whitespace in order to differentiate between blocks of matchers.
+
+Empty matchees, where one does not want to do anything, shall be denoted by a
+`{}`. Matchees with more than one expression should be surrounded by a `{}`
+block. Place a comma after each match pattern.
+
+
+```rust
+match res {
+  Ok(3) => return IsThree, // simple
+  Ok(4) => if cond {
+    return FourAndCond;
+  } else {
+    return FourAndNotCond;
+  },
+
+  Ok(x) if x > 10 => return GreaterThanTen,
+
+  Ok(5)
+  | Ok(-5)
+  => {},
+
+  Ok(_) => {
+    println!("We didn't receive any of the normal numbers!");
+    return WeirdNumber;
+  };
+  Err(e) => panic!("{}", e),
+}
+``` 
+
 ### as
 
 Put spaces before and after `as`:
