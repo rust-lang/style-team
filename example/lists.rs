@@ -11,10 +11,10 @@
 use std::cmp;
 use std::iter::Peekable;
 
-use syntax::codemap::{self, CodeMap, BytePos};
+use syntax::codemap::{self, BytePos, CodeMap};
 
 use Indent;
-use comment::{FindUncommented, rewrite_comment, find_comment_end};
+use comment::{find_comment_end, rewrite_comment, FindUncommented};
 use config::Config;
 
 #[derive(Eq, PartialEq, Debug, Copy, Clone)]
@@ -271,15 +271,13 @@ where
             let block_mode = tactic != DefinitiveListTactic::Vertical;
             // Width restriction is only relevant in vertical mode.
             let max_width = formatting.width;
-            let comment = try_opt!(
-                rewrite_comment(
-                    comment,
-                    block_mode,
-                    max_width,
-                    formatting.indent,
-                    formatting.config,
-                ),
-            );
+            let comment = try_opt!(rewrite_comment(
+                comment,
+                block_mode,
+                max_width,
+                formatting.indent,
+                formatting.config,
+            ),);
             result.push_str(&comment);
 
             if tactic == DefinitiveListTactic::Vertical {
@@ -295,15 +293,13 @@ where
         // Post-comments
         if tactic != DefinitiveListTactic::Vertical && item.post_comment.is_some() {
             let comment = item.post_comment.as_ref().unwrap();
-            let formatted_comment = try_opt!(
-                rewrite_comment(
-                    comment,
-                    true,
-                    formatting.width,
-                    Indent::empty(),
-                    formatting.config,
-                ),
-            );
+            let formatted_comment = try_opt!(rewrite_comment(
+                comment,
+                true,
+                formatting.width,
+                Indent::empty(),
+                formatting.config,
+            ),);
 
             result.push(' ');
             result.push_str(&formatted_comment);
@@ -329,8 +325,13 @@ where
                 comment.trim().contains('\n') ||
                 comment.trim().len() > width;
 
-            let formatted_comment =
-                try_opt!(rewrite_comment(comment, block_style, width, offset, formatting.config));
+            let formatted_comment = try_opt!(rewrite_comment(
+                comment,
+                block_style,
+                width,
+                offset,
+                formatting.config
+            ));
 
             result.push(' ');
             result.push_str(&formatted_comment);
@@ -403,23 +404,23 @@ where
                         // Comment belongs to next item.
                         (Some(i), None) if i > separator_index => separator_index + 1,
                         // Block-style post-comment before the separator.
-                        (Some(i), None) => {
-                            cmp::max(find_comment_end(&post_snippet[i..]).unwrap() + i,
-                                     separator_index + 1)
-                        }
+                        (Some(i), None) => cmp::max(
+                            find_comment_end(&post_snippet[i..]).unwrap() + i,
+                            separator_index + 1,
+                        ),
                         // Block-style post-comment. Either before or after the separator.
-                        (Some(i), Some(j)) if i < j => {
-                            cmp::max(find_comment_end(&post_snippet[i..]).unwrap() + i,
-                                     separator_index + 1)
-                        }
+                        (Some(i), Some(j)) if i < j => cmp::max(
+                            find_comment_end(&post_snippet[i..]).unwrap() + i,
+                            separator_index + 1,
+                        ),
                         // Potential *single* line comment.
                         (_, Some(j)) if j > separator_index => j + 1,
                         _ => post_snippet.len(),
                     }
                 }
-                None => {
-                    post_snippet.find_uncommented(self.terminator).unwrap_or(post_snippet.len())
-                }
+                None => post_snippet
+                    .find_uncommented(self.terminator)
+                    .unwrap_or(post_snippet.len()),
             };
 
             if !post_snippet.is_empty() && comment_end > 0 {
@@ -431,7 +432,8 @@ where
                 let first_newline = test_snippet.find('\n').unwrap_or(test_snippet.len());
                 // From the end of the first line of comments.
                 let test_snippet = &test_snippet[first_newline..];
-                let first = test_snippet.find(|c: char| !c.is_whitespace())
+                let first = test_snippet
+                    .find(|c: char| !c.is_whitespace())
                     .unwrap_or(test_snippet.len());
                 // From the end of the first line of comments to the next non-whitespace char.
                 let test_snippet = &test_snippet[..first];
