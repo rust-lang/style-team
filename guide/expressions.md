@@ -1,3 +1,5 @@
+## Expressions
+
 ### Closures
 
 Don't put any extra spaces before the first `|` (unless the closure is prefixed
@@ -136,7 +138,7 @@ Do not put any spaces around the `.`.
 x.foo().bar().baz(x, y, z);
 ```
 
-### as
+### Casts (`as`)
 
 Put spaces before and after `as`:
 
@@ -303,3 +305,20 @@ E.g., `&&Some(foo)` matches, `Foo(4, Bar)` does not.
 ### Combinable expressions
 
 TODO (#61)
+
+
+### Ranges
+
+Do not put spaces in ranges, e.g., `0..10`, `x...y`, `..x.len()`, `foo..`.
+
+When writing a range with both upper and lower bounds, if the line must be
+broken, break after the range operator and block indent the second expression:
+
+```
+a_long_expression..
+    another_long_expression
+```
+
+For the sake of indicating precedence, we recommend that if either bound is a
+compound expression, then use parentheses around it, e.g., `..(x + 1)`,
+`(x.f)..(x.f.len())`, or `0..(x - 10)`.
