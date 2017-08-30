@@ -1,3 +1,5 @@
+## Items
+
 ### Function definitions
 
 In Rust, one finds functions by searching for `fn [function-name]`; It's
@@ -30,10 +32,10 @@ let y = (11, 22, 33);
 
 ### Enums
 
-In the declaration, put each variant on its own line.
+In the declaration, put each variant on its own line, block indented.
 
-Format each variant accordingly as either a `struct`, `tuple struct`, or ident,
-which doesn't require special formatting.
+Format each variant accordingly as either a struct, tuple struct, or identifier,
+which doesn't require special formatting (but without the `struct` keyword.
 
 ```rust
 enum FooBar {
@@ -45,6 +47,22 @@ enum FooBar {
     },
 }
 ```
+
+If a struct variant is *short* (TODO link to definition), it may be formatted on
+one line. In this case, do not use a trailing comma for the field list, but do
+put spaces around braces:
+
+```rust
+enum FooBar {
+    Error { err: Box<Error>, line: u32 },
+}
+```
+
+In an enum with multiple struct variants, if any struct variant is written on
+multiple lines, then the multi-line formatting should be used for all struct
+variants. However, such a situation might be an indication that you should
+factor out the fields of the variant into their own struct.
+
 
 ### Structs and Unions
 
@@ -71,6 +89,10 @@ struct Foo {
 }
 ```
 
+Prefer using a unit struct to an empty struct (these only exist to simplify code
+generation), but if you must use an empty struct, keep it on one line with no
+space between the braces: `struct Foo;` or `struct Foo {}`.
+
 The same guidelines are used for untagged union declarations.
 
 ```rust
@@ -81,6 +103,31 @@ union Foo {
         LongType,
 }
 ```
+
+### Tuple structs
+
+Put the whole struct on one line if possible. Types in the parentheses should be
+separated by a comma and space with no trailing comma. No spaces around the
+parentheses or semi-colon:
+
+```rust
+pub struct Foo(String, u8);
+```
+
+Prefer unit structs to empty tuple structs (these only exist to simplify code
+generation), e.g., `struct Foo;` rather than `struct Foo();`.
+
+For more than a few fields, prefer a proper struct with named fields. Given
+this, a tuple struct should always fit on one line. If it does not, block format
+the fields with a field on each line and a trailing comma:
+
+```rust
+pub struct Foo(
+    String,
+    u8,
+);
+```
+
 
 ### Extern crate
 
