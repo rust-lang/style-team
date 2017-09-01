@@ -15,6 +15,64 @@ when you need to split it into multiple lines; examples:
 move |arg1: i32, arg2: i32| -> i32 { expr1; expr2 }
 ```
 
+### Array literals
+
+For simple array literals, avoid line breaking, no spaces around square
+brackets, contents of the array should be separated by commas and spaces. If
+using the repeating initialiser, there should be a space after the semicolon
+only. Apply the same rules if using the `vec!` or similar macros (always use
+square brackets here). Examples:
+
+```rust
+fn main() {
+    [1, 2, 3];
+    vec![a, b, c, d];
+    let a = [42; 10];
+}
+```
+
+If a line must be broken, prefer breaking only after the `;`, if possible.
+Otherwise, follow the rules below for function calls. In any case, the contents
+of the initialiser should be block indented and there should be line breaks
+after the opening bracket and before the closing bracket:
+
+```
+fn main() {
+    [
+        a_long_expression();
+        1234567890
+    ]
+    let x = [
+        an_expression,
+        another_expression,
+        a_third_expression,
+    ];
+}
+```
+
+
+### Array accesses, indexing, and slicing.
+
+No spaces around the square brackets, avoid breaking lines if possible, never
+break a line between the target expression and the opening bracket. If the
+indexing expression covers multiple lines, then it should be block indented and
+there should be newlines after the opening brackets and before the closing
+bracket. However, this should be avoided where possible.
+
+Examples:
+
+```rust
+fn main() {
+    foo[42];
+    &foo[..10];
+    bar[0..100];
+    foo[4 + 5 / bar];
+    a_long_target[
+        a_long_indexing_expression
+    ];
+}
+```
+
 ### Unary operations
 
 Do not include a space between a unary op and its operand (i.e., `!x`, not
