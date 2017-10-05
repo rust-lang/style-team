@@ -157,3 +157,102 @@ Use `{}` for the full definition of the macro.
 macro_rules! foo {
 }
 ```
+
+### Generics
+
+TODO
+
+
+### `where` clauses
+
+These rules apply for `where` clauses on any item.
+
+A `where` clause may immediately follow a closing bracket of any kind.
+Otherwise, it must start a new line, with no indent. Each component of a `where`
+clause must be on its own line and be block indented. There should be a trailing
+comma, unless the clause is terminated with a semicolon. If the `where` clause
+is followed by a block (or assignment), the block should be started on a new
+line. Examples:
+
+```
+fn function<T, U>(args)
+where
+    T: Bound,
+    U: AnotherBound,
+{
+    body
+}
+
+fn foo<T>(
+    args
+) -> ReturnType
+where
+    T: Bound,
+{
+    body
+}
+
+fn foo<T, U>(
+    args,
+) where
+    T: Bound,
+    U: AnotherBound,
+{
+    body
+}
+
+fn foo<T, U>(
+    args
+) -> ReturnType
+where
+    T: Bound,
+    U: AnotherBound;  // Note, no trailing comma.
+
+type Foo<T>
+where
+    T: Bound
+= Bar<T>;
+```
+
+If a `where` clause is very short, we recommend using an inline bound on the
+type parameter.
+
+
+If a component of a `where` clause is long, it may be broken before `+` and
+further block indented. Each bound should go on its own line. E.g.,
+
+```
+impl<T: ?Sized, Idx> IndexRanges<Idx> for T
+where
+    T: Index<Range<Idx>, Output = Self::Output>
+        + Index<RangeTo<Idx>, Output = Self::Output>
+        + Index<RangeFrom<Idx>, Output = Self::Output>
+        + Index<RangeInclusive<Idx>, Output = Self::Output>
+        + Index<RangeToInclusive<Idx>, Output = Self::Output> + Index<RangeFull>
+```
+
+#### Option - `where_single_line`
+
+`where_single_line` is `false` by default. If `true`, then a where clause with
+exactly one component may be formatted on a single line if the rest of the
+item's signature is also kept on one line. In this case, there is no need for a
+trailing comma and if followed by a block, no need for a newline before the
+block. E.g.,
+
+```
+// May be single-lined.
+fn foo<T>(args) -> ReturnType
+where T: Bound {
+    body
+}
+
+// Must be multi-lined.
+fn foo<T>(
+    args
+) -> ReturnType
+where
+    T: Bound,
+{
+    body
+}
+```
