@@ -257,6 +257,33 @@ where
 }
 ```
 
+
+### Type aliases
+
+Type aliases should generally be kept on one line. If necessary to break the
+line, do so after the `=`; the right-hand-side should be block indented:
+
+```rust
+pub type Foo = Bar<T>;
+
+// If multi-line is required
+type VeryLongType<T, U: SomeBound> =
+    AnEvenLongerType<T, U, Foo<T>>;
+```
+
+Where possible avoid `where` clauses and keep type constraints inline. Where
+that is not possible split the line before and after the `where` clause (and
+split the `where` clause as normal), e.g.,
+
+```rust
+type VeryLongType<T, U>
+where
+    T: U::AnAssociatedType,
+    U: SomeBound,
+= AnEvenLongerType<T, U, Foo<T>>;
+```
+
+
 ### extern items
 
 When writing extern items (such as `extern "C" fn`), always be explicit about
