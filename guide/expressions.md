@@ -424,14 +424,14 @@ TODO (#61)
 
 ### Ranges
 
-Do not put spaces in ranges, e.g., `0..10`, `x...y`, `..x.len()`, `foo..`.
+Do not put spaces in ranges, e.g., `0..10`, `x..=y`, `..x.len()`, `foo..`.
 
 When writing a range with both upper and lower bounds, if the line must be
-broken, break after the range operator and block indent the second expression:
+broken, break before the range operator and block indent the second line:
 
 ```
-a_long_expression..
-    another_long_expression
+a_long_expression
+    ..another_long_expression
 ```
 
 For the sake of indicating precedence, we recommend that if either bound is a
