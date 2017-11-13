@@ -1,3 +1,120 @@
+## Expressions
+
+### Blocks
+
+A block expression should have a newline after the initial `{` and before the
+terminal `}`. Any qualifier before the block (e.g., `unsafe`) should always be
+on the same line as the opening brace, and separated with a single space. The
+contents of the block should be block indented:
+
+```
+fn block_as_stmt() {
+    a_call();
+
+    {
+        a_call_inside_a_block();
+
+        // a comment in a block
+        the_value
+    }
+}
+
+fn block_as_expr() {
+    let foo = {
+        a_call_inside_a_block();
+
+        // a comment in a block
+        the_value
+    };
+}
+
+fn unsafe_block_as_stmt() {
+    a_call();
+
+    unsafe {
+        a_call_inside_a_block();
+
+        // a comment in a block
+        the_value
+    }
+}
+```
+
+If a block has an attribute, it should be on its own line:
+
+```
+fn block_as_stmt() {
+    #[an_attribute]
+    {
+        #![an_inner_attribute]
+
+        // a comment in a block
+        the_value
+    }
+}
+```
+
+Avoid writing comments on the same line as the braces.
+
+An empty block should be written as `{}`.
+
+A block may be written on a single line if:
+
+* it is either
+  - used in expression position (not statement position)
+  - is an unsafe block in statement position
+* contains a single-line expression and no statements
+* contains no comments
+
+A single line block should have spaces after the opening brace and before the
+closing brace.
+
+Examples:
+
+```
+fn main() {
+    // Single line
+    let _ = { a_call() };
+    let _ = unsafe { a_call() };
+
+    // Not allowed on one line
+    // Statement position.
+    {
+        a_call()
+    }
+
+    // Contains a statement
+    let _ = {
+        a_call();
+    };
+    unsafe {
+        a_call();
+    }
+
+    // Contains a comment
+    let _ = {
+        // A comment
+    };
+    let _ = {
+        // A comment
+        a_call()
+    };
+
+    // Multiple lines
+    let _ = {
+        a_call();
+        another_call()
+    };
+    let _ = {
+        a_call(
+            an_argument,
+            another_arg,
+        )
+    };
+}
+```
+
+
 ### Closures
 
 Don't put any extra spaces before the first `|` (unless the closure is prefixed
@@ -136,7 +253,7 @@ Do not put any spaces around the `.`.
 x.foo().bar().baz(x, y, z);
 ```
 
-### as
+### Casts (`as`)
 
 Put spaces before and after `as`:
 
@@ -303,3 +420,20 @@ E.g., `&&Some(foo)` matches, `Foo(4, Bar)` does not.
 ### Combinable expressions
 
 TODO (#61)
+
+
+### Ranges
+
+Do not put spaces in ranges, e.g., `0..10`, `x..=y`, `..x.len()`, `foo..`.
+
+When writing a range with both upper and lower bounds, if the line must be
+broken, break before the range operator and block indent the second line:
+
+```
+a_long_expression
+    ..another_long_expression
+```
+
+For the sake of indicating precedence, we recommend that if either bound is a
+compound expression, then use parentheses around it, e.g., `..(x + 1)`,
+`(x.f)..(x.f.len())`, or `0..(x - 10)`.
