@@ -312,6 +312,18 @@ match foo {
 }
 ```
 
+The `=>` in the match should be in a straight column.
+
+Examples:
+
+```rust
+match foo {
+   foo       => bar,
+   foofoo    => barbar,
+   foofoofoo => barbarbar,
+}
+```
+
 If the body is a single expression with no line comments is a *combinable
 expression* (see below for details), then it may be started on the same line as
 the right-hand side. If not, then it must be in a block. Example,
