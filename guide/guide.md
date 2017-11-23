@@ -145,6 +145,9 @@ struct CRepr {
 }
 ```
 
+For attributes with an equal sign, there should be a single space before and
+after the `=`, e.g., `#[foo = 42]`.
+
 There must only be a single `derive` attribute. Note for tool authors: if
 combining multiple `derive` attributes into a single attribute, the ordering of
 the derived names should be preserved. E.g., `#[derive(bar)] #[derive(foo)]
