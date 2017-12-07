@@ -377,6 +377,77 @@ let cstr = "Hi\0" as *const str as *const [u8] as *const std::os::raw::c_char;
 ```
 
 
+### Chains of fields and method calls
+
+A chain is a sequence of field accesses and/or method calls. A chain may also
+include the try operator. E.g., `a.b.c().d` or `foo?.bar().baz?`.
+
+Prefer formatting on one line if possible, and the chain is *small*. If
+formatting on multiple lines, each field access or method call in the chain
+should be on it's own line with the line-break before the `.` and after any `?`.
+Each line should be block-indented. E.g.,
+
+```rust
+let foo = bar
+    .baz?
+    .qux();
+```
+
+If the length of the last line of the first element plus it's indentation is
+less than or equal to the indentation of the second line (and there is space),
+then combine the first and second lines, e.g.,
+
+```rust
+x.baz?
+    .qux()
+
+let foo = x
+    .baz?
+    .qux();
+
+foo(
+    expr1,
+    expr2,
+).baz?
+    .qux();
+```
+
+#### Multi-line elements
+
+If any element in a chain is formatted across multiple lines, then that element
+and any later elements must be on their own line. Earlier elements may be kept
+on a single line. E.g.,
+
+```rust
+a.b.c()?.d
+    .foo(
+        an_expr,
+        another_expr,
+    )
+    .bar
+    .baz
+```
+
+Note there is block indent due to the chain and the function call in the above
+example.
+
+Prefer formatting the whole chain in mulit-line style and each element on one
+line, rather than putting some elements on multiple lines and some on a single
+line, e.g.,
+
+```rust
+// Better
+self.pre_comment
+    .as_ref()
+    .map_or(false, |comment| comment.starts_with("//"))
+
+// Worse
+self.pre_comment.as_ref().map_or(
+    false,
+    |comment| comment.starts_with("//"),
+)
+```
+
 
 ### Match
 
