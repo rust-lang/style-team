@@ -153,6 +153,71 @@ move |arg1: i32, arg2: i32| -> i32 {
 }
 ```
 
+
+### Struct literals
+
+If a struct literal is *small* it may be formatted on a single line. If not,
+each field should be on it's own, block-indented line. There should be a
+trailing comma in the mulit-line form only. There should be a space after the
+colon only.
+
+There should be a space before the opening brace. In the single-line form there
+should be spaces after the opening brace and before the closing brace.
+
+```rust
+Foo { field1, field2: 0 }
+let f = Foo {
+    field1,
+    field2: an_expr,
+};
+```
+
+Functional record update syntax is treated like a field, but it must never have
+a trailing comma. There should be no space after `..`.
+
+let f = Foo {
+    field1,
+    ..an_expr
+};
+
+
+### Tuple literals
+
+Use a single-line form where possible. There should not be spaces around the
+parentheses. Where a single-line form is not possible, each element of the tuple
+should be on it's own block-indented line and there should be a trailing comma.
+
+```rust
+(a, b, c)
+
+let x = (
+    a_long_expr,
+    another_very_long_expr,
+);
+```
+
+
+### Tuple struct literals
+
+There should be no space between the identifier and the opening parenthesis.
+Otherwise, follow the rules for tuple literals, e.g., `Foo(a, b)`.
+
+
+### Enum literals
+
+Follow the formatting rules for the various struct literals. Prefer using the
+name of the enum as a qualifying name, unless the enum is in the prelude. E.g.,
+
+```rust
+Foo::Bar(a, b)
+Foo::Baz {
+    field1,
+    field2: 1001,
+}
+Ok(an_expr)
+```
+
+
 ### Array literals
 
 For simple array literals, avoid line breaking, no spaces around square
