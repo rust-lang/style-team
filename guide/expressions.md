@@ -499,9 +499,9 @@ match foo {
 }
 ```
 
-If the body is a single expression with no line comments is a *combinable
-expression* (see below for details), then it may be started on the same line as
-the right-hand side. If not, then it must be in a block. Example,
+If the body is a single expression with no line comments and not a control flow
+expression, then it may be started on the same line as the right-hand side. If
+not, then it must be in a block. Example,
 
 ```rust
 match foo {
@@ -606,7 +606,43 @@ E.g., `&&Some(foo)` matches, `Foo(4, Bar)` does not.
 
 ### Combinable expressions
 
-TODO (#61)
+Where a function call has a single argument, and that argument is formatted
+across multiple-lines, the outer call may be formatted as if it were a single-
+line call. The same combining behaviour may be applied to any similar
+expressions which have multi-line, block-indented lists of sub-expressions
+delimited by parentheses (e.g., macros or tuple struct literals). E.g.,
+
+```rust
+foo(bar(
+    an_expr,
+    another_expr,
+))
+
+let x = foo(Bar {
+    field: whatever,
+});
+
+foo(|param| {
+    action();
+    foo(param)
+})
+```
+
+Such behaviour should extend recursively, however, tools may choose to limit the
+depth of nesting.
+
+Only where the multi-line sub-expression is a closure with an explicit block,
+this combining behviour may be used where there are other arguments, as long as
+all the arguments and the first line of the closure fit on the first line, the
+closure is the last argument, and there is only one closure argument:
+
+```rust
+foo(first_arg, x, |param| {
+    action();
+    foo(param)
+})
+```
+
 
 
 ### Ranges
