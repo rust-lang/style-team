@@ -122,14 +122,35 @@ by `move`), but put a space between the second `|` and the expression of the
 closure. Between the `|`s, you should use function definition syntax, however,
 elide types where possible.
 
-Use closures without the enclosing `{}`, if possible. Add the `{}` when you
-have a return type, when there are statements before the final expression, or
-when you need to split it into multiple lines; examples:
+Use closures without the enclosing `{}`, if possible. Add the `{}` when you have
+a return type, when there are statements, there are comments in the body, or the
+body expression spans multiple lines and is a control-flow expression. If using
+braces, follow the rules above for blocks. Examples:
 
 ```rust
 |arg1, arg2| expr
 
-move |arg1: i32, arg2: i32| -> i32 { expr1; expr2 }
+move |arg1: i32, arg2: i32| -> i32 {
+    expr1;
+    expr2
+}
+
+|| Foo {
+    field1,
+    field2: 0,
+}
+
+|| {
+    if true {
+        blah
+    } else {
+        boo
+    }
+}
+
+|x| unsafe {
+    expr
+}
 ```
 
 ### Array literals
