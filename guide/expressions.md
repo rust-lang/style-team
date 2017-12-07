@@ -193,7 +193,8 @@ fn main() {
 ### Unary operations
 
 Do not include a space between a unary op and its operand (i.e., `!x`, not
-`! x`).
+`! x`). However, there must be a space after `&mut`. Avoid line-breaking
+between a unary operator and its operand.
 
 ### Binary operations
 
@@ -202,6 +203,17 @@ Do include spaces around binary ops (i.e., `x + 1`, not `x+1`) (including `=`).
 For comparison operators, because for `T op U`, `&T op &U` is also implemented:
 if you have `t: &T`, and `u: U`, prefer `*t op u` to `t op &u`. In general,
 within expressions, prefer dereferencing to taking references.
+
+Use parentheses liberally, do not necessarily elide them due to precedence.
+Tools should not automatically insert or remove parentheses. Do not use spaces
+to indicate precedence.
+
+If line-breaking, put the operator on a new line and block indent. E.g.,
+
+```rust
+foo + bar + baz
+    + qux + whatever
+```
 
 ### Control flow
 
