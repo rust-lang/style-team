@@ -328,6 +328,8 @@ Do not put a space between an argument, and the comma which follows.
 
 Do put a space between an argument, and the comma which precedes it.
 
+Prefer not to break a line in the callee expression.
+
 #### Single-line calls
 
 Do not put a space between the function name and open paren, between the open
@@ -339,17 +341,32 @@ Do not put a comma after the last argument.
 foo(x, y, z)
 ```
 
+#### Multi-line calls
+
+If the function call is not *small*, it would otherwise over-run the max width,
+or any argument or the callee is multi-line, then the call should be formatted
+across multiple lines. In this case, each argument should be on it's own block-
+indented line, there should be a newline after the opening parenthesis and
+before the closing parenthesis, and there should be a trailing comma. E.g.,
+
+```rust
+a_function_call(
+    arg1,
+    a_nested_call(a, b),
+)
+```
+
+
 ### Method calls
 
 Follow the function rules for calling.
-
-#### Single-line
 
 Do not put any spaces around the `.`.
 
 ```rust
 x.foo().bar().baz(x, y, z);
 ```
+
 
 ### Casts (`as`)
 
@@ -358,6 +375,7 @@ Put spaces before and after `as`:
 ```rust
 let cstr = "Hi\0" as *const str as *const [u8] as *const std::os::raw::c_char;
 ```
+
 
 
 ### Match
