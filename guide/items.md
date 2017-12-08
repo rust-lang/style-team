@@ -28,6 +28,22 @@ The proper ordering and spacing is:
 
 Avoid comments within the signature itself.
 
+If the function signature does not fit on one line, then break after the opening
+parenthesis and before the closing parenthesis and put each argument on its own
+block-indented line. For example,
+
+```rust
+fn foo(
+    arg1: i32,
+    arg2: i32,
+) -> i32 {
+    ...
+}
+```
+
+Note the trailing comma on the last argument.
+
+
 ### Tuples and tuple structs
 
 Write the type list as you would a parameter list to a function.
