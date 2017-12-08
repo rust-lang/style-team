@@ -162,6 +162,13 @@ macro_rules! foo {
 
 TODO
 
+If an associated type is bound in a generic type, then there should be spaces on
+either side of the `=`:
+
+```
+<T: Example<Item = u32>>
+```
+
 
 ### `where` clauses
 
@@ -281,6 +288,17 @@ where
     T: U::AnAssociatedType,
     U: SomeBound,
 = AnEvenLongerType<T, U, Foo<T>>;
+```
+
+
+### Associated types
+
+Associated types should follow the guidelines above for type aliases. Where an
+associated type has a bound, there should be a space after the colon but not
+before:
+
+```rust
+    pub type Foo: Bar;
 ```
 
 

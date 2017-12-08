@@ -12,6 +12,7 @@ Use spaces, not tabs.
 ### [Module-level items](items.md)
 ### [Statements](statements.md)
 ### [Expressions](expressions.md)
+### [Types](type.md)
 
 
 ### Comments
