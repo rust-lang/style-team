@@ -100,6 +100,8 @@ struct CRepr {
 }
 ```
 
+## [Guiding principles and rationale](principles.md)
+
 ## [Non-formatting conventions](advice.md)
 
 ## [Cargo.toml conventions](cargo.md)
