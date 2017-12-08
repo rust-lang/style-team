@@ -133,6 +133,7 @@ union Foo {
 }
 ```
 
+
 ### Tuple structs
 
 Put the whole struct on one line if possible. Types in the parentheses should be
@@ -155,6 +156,45 @@ pub struct Foo(
     String,
     u8,
 );
+```
+
+
+### Traits
+
+Trait items should be block-indented. If there are no items, the trait may be
+formatted on a single line. Otherwise there should be line-breaks after the
+opening brace and before the closing brace:
+
+```rust
+trait Foo {}
+
+pub trait Bar {
+    ...
+}
+```
+
+If the trait has bounds, there should be a space after the colon but not before
+and before and after each `+`, e.g.,
+
+```rust
+trait Foo: Debug + Bar {}
+```
+
+Prefer not to line-break in the bounds if possible (consider using a `where`
+clause). Prefer to break between bounds than to break any indeividual bound. If
+you must break the bounds, put each bound (including the first) on its own
+block-indented line, break before the `+` and put the opening brace on its own
+line:
+
+```rust
+pub trait IndexRanges:
+    Index<Range<usize>, Output=Self>
+    + Index<RangeTo<usize>, Output=Self>
+    + Index<RangeFrom<usize>, Output=Self>
+    + Index<RangeFull, Output=Self>
+{
+    ...
+}
 ```
 
 
