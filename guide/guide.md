@@ -9,6 +9,29 @@ like, up to and including eating your laundry.
 
 Use spaces, not tabs.
 
+### Blank lines
+
+Separate items and statements by either zero or one blank lines (i.e., one or
+two newlines). E.g,
+
+```rust
+fn foo() {
+    let x = ...;
+    
+    let y = ...;
+    let z = ...;
+}
+
+fn bar() {}
+fn baz() {}
+```
+
+Formatting tools should make the bounds on blank lines configurable: there
+should be separate minimum and maximum numbers of newlines between both
+statements and (top-level) items (i.e., four options). As described above, the
+defaults for both statements and items should be minimum: 1, maximum: 2.
+
+
 ### [Module-level items](items.md)
 ### [Statements](statements.md)
 ### [Expressions](expressions.md)
