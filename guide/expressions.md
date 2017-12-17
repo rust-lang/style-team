@@ -660,3 +660,13 @@ a_long_expression
 For the sake of indicating precedence, we recommend that if either bound is a
 compound expression, then use parentheses around it, e.g., `..(x + 1)`,
 `(x.f)..(x.f.len())`, or `0..(x - 10)`.
+
+
+### Hexadecimal literals
+
+Hexadecimal literals may use upper- or lower-case letters, but they must not be
+mixed within the same literal. Projects should use the same case for all
+literals, but we do not make a recommendation for either lower- or upper-case.
+Tools should have an option to convert mixed case literals to upper-case, and
+may have an option to convert all literals to either lower- or upper-case.
+
