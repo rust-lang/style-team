@@ -368,6 +368,34 @@ x.foo().bar().baz(x, y, z);
 ```
 
 
+### Macro uses
+
+Macros which can be parsed like other constructs should be formatted like those
+constructs. For example, a macro use `foo!(a, b, c)` can be parsed like a
+function call (ignoring the `!`), therefore it should be formatted following the
+rules for function calls.
+
+#### Special case macros
+
+Macros which take a format string and where all other arguments are *small* may
+be formatted with arguments before and after the format string on a single line
+and the format string on its own line, rather than putting each argument on its
+own line. For example,
+
+```rust
+println!(
+    "Hello {} and {}",
+    name1, name2,
+);
+
+assert_eq!(
+    x, y,
+    "x and y were not equal, see {}",
+    reason,
+);
+```
+
+
 ### Casts (`as`)
 
 Put spaces before and after `as`:
