@@ -35,7 +35,7 @@ defaults for both statements and items should be minimum: 1, maximum: 2.
 ### [Module-level items](items.md)
 ### [Statements](statements.md)
 ### [Expressions](expressions.md)
-### [Types](type.md)
+### [Types](types.md)
 
 
 ### Comments
