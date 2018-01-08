@@ -7,7 +7,7 @@ terminal `}`. Any qualifier before the block (e.g., `unsafe`) should always be
 on the same line as the opening brace, and separated with a single space. The
 contents of the block should be block indented:
 
-```
+```rust
 fn block_as_stmt() {
     a_call();
 
@@ -42,7 +42,7 @@ fn unsafe_block_as_stmt() {
 
 If a block has an attribute, it should be on its own line:
 
-```
+```rust
 fn block_as_stmt() {
     #[an_attribute]
     {
@@ -71,7 +71,7 @@ closing brace.
 
 Examples:
 
-```
+```rust
 fn main() {
     // Single line
     let _ = { a_call() };
@@ -153,7 +153,7 @@ Otherwise, follow the rules below for function calls. In any case, the contents
 of the initialiser should be block indented and there should be line breaks
 after the opening bracket and before the closing bracket:
 
-```
+```rust
 fn main() {
     [
         a_long_expression();
@@ -429,7 +429,7 @@ Do not put spaces in ranges, e.g., `0..10`, `x..=y`, `..x.len()`, `foo..`.
 When writing a range with both upper and lower bounds, if the line must be
 broken, break before the range operator and block indent the second line:
 
-```
+```rust
 a_long_expression
     ..another_long_expression
 ```

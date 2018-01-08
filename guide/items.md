@@ -165,7 +165,7 @@ TODO
 If an associated type is bound in a generic type, then there should be spaces on
 either side of the `=`:
 
-```
+```rust
 <T: Example<Item = u32>>
 ```
 
@@ -181,7 +181,7 @@ comma, unless the clause is terminated with a semicolon. If the `where` clause
 is followed by a block (or assignment), the block should be started on a new
 line. Examples:
 
-```
+```rust
 fn function<T, U>(args)
 where
     T: Bound,
@@ -228,7 +228,7 @@ type parameter.
 If a component of a `where` clause is long, it may be broken before `+` and
 further block indented. Each bound should go on its own line. E.g.,
 
-```
+```rust
 impl<T: ?Sized, Idx> IndexRanges<Idx> for T
 where
     T: Index<Range<Idx>, Output = Self::Output>
@@ -246,7 +246,7 @@ item's signature is also kept on one line. In this case, there is no need for a
 trailing comma and if followed by a block, no need for a newline before the
 block. E.g.,
 
-```
+```rust
 // May be single-lined.
 fn foo<T>(args) -> ReturnType
 where T: Bound {
