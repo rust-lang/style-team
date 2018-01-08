@@ -32,7 +32,7 @@ after the opening square bracket, indent each item by one indentation level,
 put a comma after each item (including the last), and put the closing square
 bracket at the start of a line by itself after the last item.
 
-```
+```rust
 authors = [
     "A Uthor <a.uthor@example.org>",
     "Another Author <author@example.net>",
@@ -44,7 +44,7 @@ table using curly braces and commas on the same line as the key if it fits. If
 the entire table does not fit on the same line as the key, separate it out into
 a separate section with key-value pairs:
 
-```
+```toml
 [dependencies]
 crate1 = { path = "crate1", version = "1.2.3" }
 

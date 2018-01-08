@@ -31,7 +31,7 @@ following principles (in rough priority order):
 
 Prefer block indent over visual indent. E.g.,
 
-```
+```rust
 // Block indent
 a_function_call(
     foo,
