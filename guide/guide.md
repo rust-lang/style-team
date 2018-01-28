@@ -1,5 +1,25 @@
 # Rust Style Guide
 
+## Motivation - why use a formatting tool?
+
+Formatting code is a mostly mechanical task which takes both time and mental
+effort. By using an automatic formatting tool, a programmer is relieved of
+this task and can concentrate on more important things.
+
+Furthermore, by sticking to an established style guide (such as this one),
+programmers don't need to formulate ad hoc style rules, nor do they need to
+debate with other programmers what style rules should be used, saving time,
+communication overhead, and mental energy.
+
+Humans comprehend information through pattern matching. By ensuring that all
+Rust code has similar formatting, less mental effort is required to comprehend a
+new project, lowering the bar to entry for new developers.
+
+Thus, there are productivity benefits to using a formatting tool (such as
+rustfmt), and even larger benefits by using a community-consistent formatting,
+typically by using a formatting tool's default settings.
+
+
 ## Formatting conventions
 
 These formatting conventions are a work in progress, and may do anything they
