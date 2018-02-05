@@ -198,11 +198,39 @@ pub trait IndexRanges:
 ```
 
 
+### Impls
+
+Impl items should be block indented. If there are no items, the impl may be
+formatted on a single line. Otherwise there should be line-breaks after the
+opening brace and before the closing brace:
+
+```rust
+impl Foo {}
+
+impl Bar for Foo {
+    ...
+}
+```
+
+Avoid line-breaking in the signature if possible. If a line break is required in
+a non-inherent impl, break immediately before `for`, block indent the concrete type
+and put the opening brace on it's own line:
+
+```rust
+impl Bar
+    for Foo
+{
+    ...
+}
+```
+
+
 ### Extern crate
 
 `extern crate foo;`
 
 Use spaces around keywords, no spaces around the semi-colon.
+
 
 ### Modules
 
