@@ -368,6 +368,34 @@ x.foo().bar().baz(x, y, z);
 ```
 
 
+### Macro uses
+
+Macros which can be parsed like other constructs should be formatted like those
+constructs. For example, a macro use `foo!(a, b, c)` can be parsed like a
+function call (ignoring the `!`), therefore it should be formatted following the
+rules for function calls.
+
+#### Special case macros
+
+Macros which take a format string and where all other arguments are *small* may
+be formatted with arguments before and after the format string on a single line
+and the format string on its own line, rather than putting each argument on its
+own line. For example,
+
+```rust
+println!(
+    "Hello {} and {}",
+    name1, name2,
+);
+
+assert_eq!(
+    x, y,
+    "x and y were not equal, see {}",
+    reason,
+);
+```
+
+
 ### Casts (`as`)
 
 Put spaces before and after `as`:
@@ -660,3 +688,13 @@ a_long_expression
 For the sake of indicating precedence, we recommend that if either bound is a
 compound expression, then use parentheses around it, e.g., `..(x + 1)`,
 `(x.f)..(x.f.len())`, or `0..(x - 10)`.
+
+
+### Hexadecimal literals
+
+Hexadecimal literals may use upper- or lower-case letters, but they must not be
+mixed within the same literal. Projects should use the same case for all
+literals, but we do not make a recommendation for either lower- or upper-case.
+Tools should have an option to convert mixed case literals to upper-case, and
+may have an option to convert all literals to either lower- or upper-case.
+
