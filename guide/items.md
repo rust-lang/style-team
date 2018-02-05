@@ -1,5 +1,18 @@
 ## Items
 
+`extern crate` statements must be first in a file. They must be ordered
+alphabetically.
+
+`use` statements, and module *declarations* (`mod foo;`, not `mod { ... }`)
+must come before other items. We recommend that imports come before module
+declarations; if imports and modules are separated, then they should be ordered
+alphabetically. When sorting, `self` and `super` must come before any other
+names. Module declarations should not be moved if they are annotated with
+`#[macro_export]`, since that may be semantics changing.
+
+Tools should make the above ordering optional.
+
+
 ### Function definitions
 
 In Rust, one finds functions by searching for `fn [function-name]`; It's

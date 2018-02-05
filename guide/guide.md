@@ -125,6 +125,7 @@ Prefer line comments (`///`) to block comments (`//* ... */`).
 Prefer outer doc comments (`///` or `//*`), only use inner doc comments (`//!`
 and `//*!`) to write module-level or crate-level documentation.
 
+Doc comments should come before attributes.
 
 ### Attributes
 
@@ -144,7 +145,13 @@ struct CRepr {
 }
 ```
 
-## [Guiding principles and rationale](principles.md)
+For attributes with an equal sign, there should be a single space before and
+after the `=`, e.g., `#[foo = 42]`.
+
+There must only be a single `derive` attribute. Note for tool authors: if
+combining multiple `derive` attributes into a single attribute, the ordering of
+the derived names should be preserved. E.g., `#[derive(bar)] #[derive(foo)]
+struct Baz;` should be formatted to `#[derive(bar, foo)] struct Baz;`.
 
 ## [Non-formatting conventions](advice.md)
 
