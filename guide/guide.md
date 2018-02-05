@@ -25,9 +25,13 @@ typically by using a formatting tool's default settings.
 These formatting conventions are a work in progress, and may do anything they
 like, up to and including eating your laundry.
 
-### Indentation
 
-Use spaces, not tabs.
+### Indentation and line width
+
+Use spaces, not tabs. Each level of indentation must be four spaces. The maximum
+width for a line is 100 characters. A tool should be configurable for all three
+of these variables.
+
 
 ### Blank lines
 
