@@ -181,7 +181,7 @@ trait Foo: Debug + Bar {}
 ```
 
 Prefer not to line-break in the bounds if possible (consider using a `where`
-clause). Prefer to break between bounds than to break any indeividual bound. If
+clause). Prefer to break between bounds than to break any individual bound. If
 you must break the bounds, put each bound (including the first) on its own
 block-indented line, break before the `+` and put the opening brace on its own
 line:
