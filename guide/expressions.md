@@ -589,8 +589,8 @@ body on a new line:
 ```
 
 If required to break the pattern, put each clause of the pattern on its own
-line, breaking before the `|`. If there is an `if` clause, then you must use the
-above form:
+line with no additional indent, breaking before the `|`. If there is an `if`
+clause, then you must use the above form:
 
 ```rust
     a_very_long_pattern
