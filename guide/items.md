@@ -28,6 +28,22 @@ The proper ordering and spacing is:
 
 Avoid comments within the signature itself.
 
+If the function signature does not fit on one line, then break after the opening
+parenthesis and before the closing parenthesis and put each argument on its own
+block-indented line. For example,
+
+```rust
+fn foo(
+    arg1: i32,
+    arg2: i32,
+) -> i32 {
+    ...
+}
+```
+
+Note the trailing comma on the last argument.
+
+
 ### Tuples and tuple structs
 
 Write the type list as you would a parameter list to a function.
@@ -117,6 +133,7 @@ union Foo {
 }
 ```
 
+
 ### Tuple structs
 
 Put the whole struct on one line if possible. Types in the parentheses should be
@@ -139,6 +156,45 @@ pub struct Foo(
     String,
     u8,
 );
+```
+
+
+### Traits
+
+Trait items should be block-indented. If there are no items, the trait may be
+formatted on a single line. Otherwise there should be line-breaks after the
+opening brace and before the closing brace:
+
+```rust
+trait Foo {}
+
+pub trait Bar {
+    ...
+}
+```
+
+If the trait has bounds, there should be a space after the colon but not before
+and before and after each `+`, e.g.,
+
+```rust
+trait Foo: Debug + Bar {}
+```
+
+Prefer not to line-break in the bounds if possible (consider using a `where`
+clause). Prefer to break between bounds than to break any individual bound. If
+you must break the bounds, put each bound (including the first) on its own
+block-indented line, break before the `+` and put the opening brace on its own
+line:
+
+```rust
+pub trait IndexRanges:
+    Index<Range<usize>, Output=Self>
+    + Index<RangeTo<usize>, Output=Self>
+    + Index<RangeFrom<usize>, Output=Self>
+    + Index<RangeFull, Output=Self>
+{
+    ...
+}
 ```
 
 
@@ -171,9 +227,35 @@ macro_rules! foo {
 }
 ```
 
+
 ### Generics
 
-TODO
+Prefer to put a generics clause on one line. Break other parts of an item
+declaration rather than line-breaking a generics clause. If a generics clause is
+large enough to require line-breaking, you should prefer to use a `where` clause
+instead.
+
+Do not put spaces before or after `<` nor before `>`. Only put a space after `>`
+if it is followed by a word or opening brace, not an opening parenthesis. There
+should be a space after each comma and no trailing comma.
+
+```rust
+fn foo<T: Display, U: Debug>(x: Vec<T>, y: Vec<U>) ...
+
+impl<T: Display, U: Debug> SomeType<T, U> { ...
+```
+
+If the generics clause must be formatted across multiple lines, each parameter
+should have its own block-indented line, there should be newlines after the
+opening bracket and before the closing bracket, and the should be a trailing
+comma.
+
+```rust
+fn foo<
+    T: Display,
+    U: Debug,
+>(x: Vec<T>, y: Vec<U>) ...
+```
 
 If an associated type is bound in a generic type, then there should be spaces on
 either side of the `=`:
@@ -181,6 +263,8 @@ either side of the `=`:
 ```rust
 <T: Example<Item = u32>>
 ```
+
+Prefer to use single-letter names for generic parameters.
 
 
 ### `where` clauses
