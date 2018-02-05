@@ -122,15 +122,101 @@ by `move`), but put a space between the second `|` and the expression of the
 closure. Between the `|`s, you should use function definition syntax, however,
 elide types where possible.
 
-Use closures without the enclosing `{}`, if possible. Add the `{}` when you
-have a return type, when there are statements before the final expression, or
-when you need to split it into multiple lines; examples:
+Use closures without the enclosing `{}`, if possible. Add the `{}` when you have
+a return type, when there are statements, there are comments in the body, or the
+body expression spans multiple lines and is a control-flow expression. If using
+braces, follow the rules above for blocks. Examples:
 
 ```rust
 |arg1, arg2| expr
 
-move |arg1: i32, arg2: i32| -> i32 { expr1; expr2 }
+move |arg1: i32, arg2: i32| -> i32 {
+    expr1;
+    expr2
+}
+
+|| Foo {
+    field1,
+    field2: 0,
+}
+
+|| {
+    if true {
+        blah
+    } else {
+        boo
+    }
+}
+
+|x| unsafe {
+    expr
+}
 ```
+
+
+### Struct literals
+
+If a struct literal is *small* it may be formatted on a single line. If not,
+each field should be on it's own, block-indented line. There should be a
+trailing comma in the multi-line form only. There should be a space after the
+colon only.
+
+There should be a space before the opening brace. In the single-line form there
+should be spaces after the opening brace and before the closing brace.
+
+```rust
+Foo { field1, field2: 0 }
+let f = Foo {
+    field1,
+    field2: an_expr,
+};
+```
+
+Functional record update syntax is treated like a field, but it must never have
+a trailing comma. There should be no space after `..`.
+
+let f = Foo {
+    field1,
+    ..an_expr
+};
+
+
+### Tuple literals
+
+Use a single-line form where possible. There should not be spaces around the
+parentheses. Where a single-line form is not possible, each element of the tuple
+should be on it's own block-indented line and there should be a trailing comma.
+
+```rust
+(a, b, c)
+
+let x = (
+    a_long_expr,
+    another_very_long_expr,
+);
+```
+
+
+### Tuple struct literals
+
+There should be no space between the identifier and the opening parenthesis.
+Otherwise, follow the rules for tuple literals, e.g., `Foo(a, b)`.
+
+
+### Enum literals
+
+Follow the formatting rules for the various struct literals. Prefer using the
+name of the enum as a qualifying name, unless the enum is in the prelude. E.g.,
+
+```rust
+Foo::Bar(a, b)
+Foo::Baz {
+    field1,
+    field2: 1001,
+}
+Ok(an_expr)
+```
+
 
 ### Array literals
 
@@ -193,7 +279,8 @@ fn main() {
 ### Unary operations
 
 Do not include a space between a unary op and its operand (i.e., `!x`, not
-`! x`).
+`! x`). However, there must be a space after `&mut`. Avoid line-breaking
+between a unary operator and its operand.
 
 ### Binary operations
 
@@ -202,6 +289,17 @@ Do include spaces around binary ops (i.e., `x + 1`, not `x+1`) (including `=`).
 For comparison operators, because for `T op U`, `&T op &U` is also implemented:
 if you have `t: &T`, and `u: U`, prefer `*t op u` to `t op &u`. In general,
 within expressions, prefer dereferencing to taking references.
+
+Use parentheses liberally, do not necessarily elide them due to precedence.
+Tools should not automatically insert or remove parentheses. Do not use spaces
+to indicate precedence.
+
+If line-breaking, put the operator on a new line and block indent. E.g.,
+
+```rust
+foo + bar + baz
+    + qux + whatever
+```
 
 ### Control flow
 
@@ -230,6 +328,8 @@ Do not put a space between an argument, and the comma which follows.
 
 Do put a space between an argument, and the comma which precedes it.
 
+Prefer not to break a line in the callee expression.
+
 #### Single-line calls
 
 Do not put a space between the function name and open paren, between the open
@@ -241,11 +341,25 @@ Do not put a comma after the last argument.
 foo(x, y, z)
 ```
 
+#### Multi-line calls
+
+If the function call is not *small*, it would otherwise over-run the max width,
+or any argument or the callee is multi-line, then the call should be formatted
+across multiple lines. In this case, each argument should be on it's own block-
+indented line, there should be a newline after the opening parenthesis and
+before the closing parenthesis, and there should be a trailing comma. E.g.,
+
+```rust
+a_function_call(
+    arg1,
+    a_nested_call(a, b),
+)
+```
+
+
 ### Method calls
 
 Follow the function rules for calling.
-
-#### Single-line
 
 Do not put any spaces around the `.`.
 
@@ -253,12 +367,85 @@ Do not put any spaces around the `.`.
 x.foo().bar().baz(x, y, z);
 ```
 
+
 ### Casts (`as`)
 
 Put spaces before and after `as`:
 
 ```rust
 let cstr = "Hi\0" as *const str as *const [u8] as *const std::os::raw::c_char;
+```
+
+
+### Chains of fields and method calls
+
+A chain is a sequence of field accesses and/or method calls. A chain may also
+include the try operator. E.g., `a.b.c().d` or `foo?.bar().baz?`.
+
+Prefer formatting on one line if possible, and the chain is *small*. If
+formatting on multiple lines, each field access or method call in the chain
+should be on it's own line with the line-break before the `.` and after any `?`.
+Each line should be block-indented. E.g.,
+
+```rust
+let foo = bar
+    .baz?
+    .qux();
+```
+
+If the length of the last line of the first element plus it's indentation is
+less than or equal to the indentation of the second line (and there is space),
+then combine the first and second lines, e.g.,
+
+```rust
+x.baz?
+    .qux()
+
+let foo = x
+    .baz?
+    .qux();
+
+foo(
+    expr1,
+    expr2,
+).baz?
+    .qux();
+```
+
+#### Multi-line elements
+
+If any element in a chain is formatted across multiple lines, then that element
+and any later elements must be on their own line. Earlier elements may be kept
+on a single line. E.g.,
+
+```rust
+a.b.c()?.d
+    .foo(
+        an_expr,
+        another_expr,
+    )
+    .bar
+    .baz
+```
+
+Note there is block indent due to the chain and the function call in the above
+example.
+
+Prefer formatting the whole chain in mulit-line style and each element on one
+line, rather than putting some elements on multiple lines and some on a single
+line, e.g.,
+
+```rust
+// Better
+self.pre_comment
+    .as_ref()
+    .map_or(false, |comment| comment.starts_with("//"))
+
+// Worse
+self.pre_comment.as_ref().map_or(
+    false,
+    |comment| comment.starts_with("//"),
+)
 ```
 
 
@@ -312,9 +499,9 @@ match foo {
 }
 ```
 
-If the body is a single expression with no line comments is a *combinable
-expression* (see below for details), then it may be started on the same line as
-the right-hand side. If not, then it must be in a block. Example,
+If the body is a single expression with no line comments and not a control flow
+expression, then it may be started on the same line as the right-hand side. If
+not, then it must be in a block. Example,
 
 ```rust
 match foo {
@@ -419,7 +606,43 @@ E.g., `&&Some(foo)` matches, `Foo(4, Bar)` does not.
 
 ### Combinable expressions
 
-TODO (#61)
+Where a function call has a single argument, and that argument is formatted
+across multiple-lines, the outer call may be formatted as if it were a single-
+line call. The same combining behaviour may be applied to any similar
+expressions which have multi-line, block-indented lists of sub-expressions
+delimited by parentheses (e.g., macros or tuple struct literals). E.g.,
+
+```rust
+foo(bar(
+    an_expr,
+    another_expr,
+))
+
+let x = foo(Bar {
+    field: whatever,
+});
+
+foo(|param| {
+    action();
+    foo(param)
+})
+```
+
+Such behaviour should extend recursively, however, tools may choose to limit the
+depth of nesting.
+
+Only where the multi-line sub-expression is a closure with an explicit block,
+this combining behviour may be used where there are other arguments, as long as
+all the arguments and the first line of the closure fit on the first line, the
+closure is the last argument, and there is only one closure argument:
+
+```rust
+foo(first_arg, x, |param| {
+    action();
+    foo(param)
+})
+```
+
 
 
 ### Ranges
