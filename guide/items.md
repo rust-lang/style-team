@@ -340,6 +340,8 @@ where
     T: Bound,
     U: AnotherBound;  // Note, no trailing comma.
 
+// Note that where clauses on `type` aliases are not enforced and should not
+// be used.
 type Foo<T>
 where
     T: Bound
