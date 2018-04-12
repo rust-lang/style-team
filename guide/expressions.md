@@ -499,6 +499,22 @@ let x = match foo.bar.baz() {
 
 Use a trailing comma for a match arm if and only if not using a block. 
 
+Never start a match arm pattern with `|`, e.g.,
+
+```rust
+match foo {
+    // Don't do this.
+    | foo => bar,
+    // Or this.
+    | a_very_long_pattern
+    | another_pattern
+    | yet_another_pattern
+    | a_forth_pattern => {
+        ...
+    }
+}
+```
+
 Avoid splitting the left-hand side (before the `=>`) of a match arm where
 possible. If the right-hand side of the match arm is kept on the same line,
 never use a block (unless the block is empty).
