@@ -676,7 +676,6 @@ foo(first_arg, x, |param| {
 ```
 
 
-
 ### Ranges
 
 Do not put spaces in ranges, e.g., `0..10`, `x..=y`, `..x.len()`, `foo..`.
@@ -702,3 +701,8 @@ literals, but we do not make a recommendation for either lower- or upper-case.
 Tools should have an option to convert mixed case literals to upper-case, and
 may have an option to convert all literals to either lower- or upper-case.
 
+
+## Patterns
+
+Patterns should be formatted like their corresponding expressions. See the
+section on `match` for additional formatting for patterns in match arms.
