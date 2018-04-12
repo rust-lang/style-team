@@ -480,6 +480,101 @@ self.pre_comment.as_ref().map_or(
 )
 ```
 
+### Control flow expressions
+
+This section covers `if`, `if let`, `loop`, `while`, `while let`, and `for`
+expressions.
+
+The keyword, any initial clauses, and the opening brace of the block should be
+on a single line. The usual rules for block formatting should be applied to the
+block.
+
+If there is an `else` component, then the closing brace, `else`, any following
+clause, and the opening brace should all be on the same line. There should be a
+single space before and after the `else` keyword. For example:
+
+```rust
+if ... {
+    ...
+} else {
+    ...
+}
+
+if let ... {
+    ...
+} else if ... {
+    ...
+} else {
+    ...
+}
+```
+
+If the control line needs to be broken, then prefer to break before the `=` in
+`* let` expressions and before `in` in a `for` expression; the following line
+should be block indented. If the control line is broken for any reason, then the
+opening brace should be on its own line and not indented. Examples:
+
+```rust
+while let Some(foo)
+    = a_long_expression
+{
+    ...
+}
+
+for foo
+    in a_long_expression
+{
+    ...
+}
+
+if a_long_expression
+    && another_long_expression
+    || a_third_long_expression
+{
+    ...
+}
+```
+
+Where the initial clause is multi-lined and ends with one or more closing
+parentheses, square brackets, or braces, and there is nothing else on that line,
+and that line is not indented beyond the indent on the first line of the control
+flow expression, then the opening brace of the block should be put on the same
+line with a preceding space. For example:
+
+```rust
+if !self.config.file_lines().intersects(
+    &self.codemap.lookup_line_range(
+        stmt.span,
+    ),
+) {  // Opening brace on same line as initial clause.
+    ...
+}
+```
+
+
+#### Single line `if else`
+
+Formatters may place an `if else` or `if let else` on a single line if it occurs
+in expression context (i.e., is not a standalone statement), it contains a
+single `else` clause, and is *small*. For example:
+
+```rust
+let y = if x { 0 } else { 1 };
+
+// Examples that must be multi-line.
+let y = if something_very_long {
+    not_small
+} else {
+    also_not_small
+};
+
+if x {
+    0
+} else {
+    1
+}
+```
+
 
 ### Match
 
@@ -664,7 +759,7 @@ Such behaviour should extend recursively, however, tools may choose to limit the
 depth of nesting.
 
 Only where the multi-line sub-expression is a closure with an explicit block,
-this combining behviour may be used where there are other arguments, as long as
+this combining behaviour may be used where there are other arguments, as long as
 all the arguments and the first line of the closure fit on the first line, the
 closure is the last argument, and there is only one closure argument:
 
