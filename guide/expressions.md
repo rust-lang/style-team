@@ -284,7 +284,8 @@ between a unary operator and its operand.
 
 ### Binary operations
 
-Do include spaces around binary ops (i.e., `x + 1`, not `x+1`) (including `=`).
+Do include spaces around binary ops (i.e., `x + 1`, not `x+1`) (including `=`
+and other assignment operators such as `+=` or `*=`).
 
 For comparison operators, because for `T op U`, `&T op &U` is also implemented:
 if you have `t: &T`, and `u: U`, prefer `*t op u` to `t op &u`. In general,
@@ -300,6 +301,9 @@ If line-breaking, put the operator on a new line and block indent. E.g.,
 foo + bar + baz
     + qux + whatever
 ```
+
+Prefer line-breaking at an assignment operator (either `=` or `+=`, etc.) rather
+than at other binary operators.
 
 ### Control flow
 
@@ -585,8 +589,8 @@ body on a new line:
 ```
 
 If required to break the pattern, put each clause of the pattern on its own
-line, breaking before the `|`. If there is an `if` clause, then you must use the
-above form:
+line with no additional indent, breaking before the `|`. If there is an `if`
+clause, then you must use the above form:
 
 ```rust
     a_very_long_pattern
