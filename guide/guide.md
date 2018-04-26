@@ -22,10 +22,6 @@ typically by using a formatting tool's default settings.
 
 ## Formatting conventions
 
-These formatting conventions are a work in progress, and may do anything they
-like, up to and including eating your laundry.
-
-
 ### Indentation and line width
 
 Use spaces, not tabs. Each level of indentation must be four spaces. The maximum
@@ -156,6 +152,35 @@ There must only be a single `derive` attribute. Note for tool authors: if
 combining multiple `derive` attributes into a single attribute, the ordering of
 the derived names should be preserved. E.g., `#[derive(bar)] #[derive(foo)]
 struct Baz;` should be formatted to `#[derive(bar, foo)] struct Baz;`.
+
+### *small* items
+
+In many places in this guide we specify that a formatter may format an item
+differently if it is *small*, for example struct literals:
+
+```rust
+// Normal formatting
+Foo {
+    f1: an_expression,
+    f2: another_expression(),
+}
+
+// *small* formatting
+Foo { f1, f2 }
+```
+
+We leave it to individual tools to decide on exactly what *small* means. In
+particular, tools are free to use different definitions in different
+circumstances.
+
+Some suitable heuristics are the size of the item (in characters) or the
+complexity of an item (for example, that all components must be simple names,
+not more complex sub-expressions). For more discussion on suitable heuristics,
+see the discussion on [this issue](https://github.com/rust-lang-nursery/fmt-rfcs/issues/47).
+
+Tools should give the user an option to ignore such heuristics and always use
+the normal formatting.
+
 
 ## [Non-formatting conventions](advice.md)
 
