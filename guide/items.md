@@ -433,4 +433,130 @@ before:
 
 When writing extern items (such as `extern "C" fn`), always be explicit about
 the ABI. For example, write `extern "C" fn foo ...`, not `extern fn foo ...`, or
-`extern "C" { ... }.
+`extern "C" { ... }`.
+
+
+### Imports (`use` statements)
+
+If an import can be formatted on one line, do so. There should be no spaces
+around braces.
+
+```rust
+use a::b::c;
+use a::b::d::*;
+use a::b::{foo, bar, baz};
+```
+
+
+#### Large list imports
+
+Prefer to use multiple imports rather than a multi-line import. However, tools
+should not split imports by default (they may offer this as an option).
+
+If an import does require multiple lines, then break after the opening brace
+and before the closing brace, use a trailing comma, and block indent the names.
+
+
+```rust
+// Prefer
+foo::{long, list, of, imports};
+foo::{more, imports};
+
+// If necessary
+foo::{
+    long, list, of, imports, more,
+    imports,  // Note trailing comma
+};
+```
+
+
+#### Ordering of imports
+
+A *group* of imports is a set of imports on the same or sequential lines. One or
+more blank lines or other items (e.g., a function) separate groups of imports.
+
+Within a group of imports, imports must be sorted ascii-betically. Groups of
+imports must not be merged or re-ordered.
+
+
+E.g., input:
+
+```rust
+use d;
+use c;
+
+use b;
+use a;
+```
+
+output:
+
+```rust
+use c;
+use d;
+
+use a;
+use b;
+```
+
+Because of `macro_use`, attributes must also start a new group and prevent
+re-ordering.
+
+Note that tools which only have access to syntax (such as Rustfmt) cannot tell
+which imports are from an external crate or the std lib, etc.
+
+
+#### Ordering list import
+
+Names in a list import must be sorted ascii-betically, but with `self` and
+`super` first, and groups and glob imports last. This applies recursively. For
+example, `a::*` comes before `b::a` but `a::b` comes before `a::*`. E.g.,
+`use foo::bar::{a, b::c, b::d, b::d::{x, y, z}, b::{self, r, s}};`.
+
+
+#### Normalisation
+
+Tools must make the following normalisations:
+
+* `use a::self;` -> `use a;`
+* `use a::{};` ->
+* `use a::{b};` -> `use a::b;`
+
+And must apply these recursively.
+
+Tools must not otherwise merge or un-merge import lists or adjust glob imports
+(without an explicit option).
+
+
+#### Nested imports
+
+If there are any nested imports in a list import, then use the multi-line form,
+even if the import fits on one line. Each nested import must be on its own line,
+but non-nested imports must be grouped on as few lines as possible.
+
+For example,
+
+```rust
+use a::b::{
+    x, y, z,
+    w::{...},
+    u::{...},
+};
+```
+
+
+#### Merging/un-merging imports
+
+An example:
+
+```rust
+// Un-merged
+use a::b;
+use a::c::d;
+
+// Merged
+use a::{b, c::d};
+```
+
+Tools must not merge or un-merge imports by default. They may offer merging or
+un-merging as an option.
