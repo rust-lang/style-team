@@ -453,8 +453,10 @@ use a::b::{foo, bar, baz};
 Prefer to use multiple imports rather than a multi-line import. However, tools
 should not split imports by default (they may offer this as an option).
 
-If an import does require multiple lines, then break after the opening brace
-and before the closing brace, use a trailing comma, and block indent the names.
+If an import does require multiple lines (either because a list of single names
+does not fit within the max width, or because of the rules for nested imports
+below), then break after the opening brace and before the closing brace, use a
+trailing comma, and block indent the names.
 
 
 ```rust
