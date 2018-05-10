@@ -295,11 +295,15 @@ Use parentheses liberally, do not necessarily elide them due to precedence.
 Tools should not automatically insert or remove parentheses. Do not use spaces
 to indicate precedence.
 
-If line-breaking, put the operator on a new line and block indent. E.g.,
+If line-breaking, put the operator on a new line and block indent. Put each 
+sub-expression on its own line. E.g.,
 
 ```rust
-foo + bar + baz
-    + qux + whatever
+foo_bar
+    + bar
+    + baz
+    + qux
+    + whatever
 ```
 
 Prefer line-breaking at an assignment operator (either `=` or `+=`, etc.) rather
