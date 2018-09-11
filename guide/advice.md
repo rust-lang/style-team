@@ -20,6 +20,7 @@ if y {
 
  * Types shall be `UpperCamelCase`,
  * Enum variants shall be `UpperCamelCase`,
+ * Where acronyms are used in the above cases, only capitalize the first letter, e.g., `HttpRequest`.
  * Struct fields shall be `snake_case`,
  * Function and method names shall be `snake_case`,
  * Local variables shall be `snake_case`,
