@@ -738,6 +738,19 @@ clause, then you must use the above form:
     }
 ```
 
+If the pattern is multi-line, and the last line is less wide than the indent, do
+not put the `if` clause on a newline. E.g.,
+
+```rust
+    Token::Dimension {
+         value,
+         ref unit,
+         ..
+    } if num_context.is_ok(context.parsing_mode, value) => {
+        ...
+    }
+```
+
 If every clause in a pattern is *small*, but does not fit on one line, then the
 pattern may be formatted across multiple lines with as many clauses per line as
 possible. Again break before a `|`:
