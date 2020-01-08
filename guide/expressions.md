@@ -638,6 +638,8 @@ a block.
 
 The body of a block arm should be block indented once.
 
+An empty match arm should be written as `pattern => {}`.
+
 Examples:
 
 ```rust
