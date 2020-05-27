@@ -25,7 +25,7 @@ typically by using a formatting tool's default settings.
 ### Indentation and line width
 
 * Use spaces, not tabs.
-* Each level of indentation must be four spaces (that is, all indentation
+* Each level of indentation must be 4 spaces (that is, all indentation
   outside of string literals and comments must be a multiple of four).
 * The maximum width for a line is 100 characters.
 * A tool should be configurable for all three of these variables.
