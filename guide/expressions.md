@@ -61,9 +61,9 @@ An empty block should be written as `{}`.
 A block may be written on a single line if:
 
 * it is either used in expression position (not statement position) or is an
-  unsafe block in statement position
-* contains a single-line expression and no statements
-* contains no comments
+  unsafe block in statement position,
+* it contains a single-line expression and no statements, and
+* it contains no comments
 
 A single line block should have spaces after the opening brace and before the
 closing brace.
