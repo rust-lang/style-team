@@ -661,7 +661,7 @@ match foo {
 ```
 
 If the body is a single expression with no line comments and not a control flow
-expression, then it may be started on the same line as the right-hand side. If
+expression, then it may be started on the same line as the left-hand side. If
 not, then it must be in a block. Example,
 
 ```rust
