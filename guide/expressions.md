@@ -634,7 +634,7 @@ never use a block (unless the block is empty).
 
 If the right-hand side consists of multiple statements or has line comments or
 the start of the line cannot be fit on the same line as the left-hand side, use
-a block.
+a block. A block may also be used in cases where the right-hand side is a macro call expression to prevent issues with expansions containing a trailing semicolon, more details [below](#macro-call-expressions).
 
 The body of a block arm should be block indented once.
 
@@ -661,7 +661,7 @@ match foo {
 ```
 
 If the body is a single expression with no line comments and not a control flow
-expression, then it may be started on the same line as the right-hand side. If
+expression, then it may be started on the same line as the left-hand side. If
 not, then it must be in a block. Example,
 
 ```rust
@@ -777,6 +777,46 @@ We define a pattern clause to be *small* if it matches the following grammar:
 
 E.g., `&&Some(foo)` matches, `Foo(4, Bar)` does not.
 
+#### Macro call expressions
+When the right-hand side of a match arm contains a macro call expression, it may be necessary to use a block to prevent issues in expansion.
+
+In some cases the right-hand side may be placed on the same line as the left-hand side. E.g.,
+
+```rust
+macro_rules! expr {
+    () => {
+        true
+    };
+}
+
+fn main() {
+    let _val: bool = match true {
+        true => expr!(),
+        false => false,
+    };
+}
+```
+
+However, in other cases it is necessary to use a block to prevent issues in macro expansion, such as with trailing semicolons.
+
+```rust
+macro_rules! stmt {
+    () => {
+        true;
+    };
+}
+
+fn main() {
+    match true {
+        true => {
+            stmt!()
+        }
+        false => {}
+    }
+}
+```
+
+Note that at the time of this writing [rustc ignores these trailing semicolons](https://github.com/rust-lang/rust/issues/33953), but this guidance is provided in case that changes.
 
 ### Combinable expressions
 
