@@ -352,9 +352,9 @@ foo(x, y, z)
 
 If the function call is not *small*, it would otherwise over-run the max width,
 or any argument or the callee is multi-line, then the call should be formatted
-across multiple lines. In this case, each argument should be on it's own block-
-indented line, there should be a newline after the opening parenthesis and
-before the closing parenthesis, and there should be a trailing comma. E.g.,
+across multiple lines. In this case, each argument should be on its own
+block-indented line, there should be a newline after the opening parenthesis
+and before the closing parenthesis, and there should be a trailing comma. E.g.,
 
 ```rust
 a_function_call(
@@ -821,8 +821,8 @@ Note that at the time of this writing [rustc ignores these trailing semicolons](
 ### Combinable expressions
 
 Where a function call has a single argument, and that argument is formatted
-across multiple-lines, the outer call may be formatted as if it were a single-
-line call. The same combining behaviour may be applied to any similar
+across multiple-lines, the outer call may be formatted as if it were a
+single-line call. The same combining behaviour may be applied to any similar
 expressions which have multi-line, block-indented lists of sub-expressions
 delimited by parentheses (e.g., macros or tuple struct literals). E.g.,
 
