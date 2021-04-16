@@ -174,10 +174,12 @@ let f = Foo {
 Functional record update syntax is treated like a field, but it must never have
 a trailing comma. There should be no space after `..`.
 
+```rust
 let f = Foo {
     field1,
     ..an_expr
 };
+```
 
 
 ### Tuple literals
