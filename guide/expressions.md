@@ -441,32 +441,36 @@ x.baz?
 let foo = x
     .baz?
     .qux();
-
-foo(
-    expr1,
-    expr2,
-).baz?
-    .qux();
 ```
 
 #### Multi-line elements
 
-If any element in a chain is formatted across multiple lines, then that element
-and any later elements must be on their own line. Earlier elements may be kept
-on a single line. E.g.,
+If any element in a chain is formatted across multiple lines, then any
+following elements must be on their own line. Earlier elements may be kept on a
+single line. E.g.,
 
 ```rust
-a.b.c()?.d
-    .foo(
-        an_expr,
-        another_expr,
-    )
+a.b.foo(|arg| {
+    a_stmt;
+    another_stmt;
+})
+.bar
+.baz
+```
+
+The elements following the mulit-line element are indented to match the start
+of the mutli-line element.
+
+```rust
+a.b.c()
+    .d
+    .foo(|arg| {
+        a_stmt;
+        another_stmt;
+    })
     .bar
     .baz
 ```
-
-Note there is block indent due to the chain and the function call in the above
-example.
 
 Prefer formatting the whole chain in multi-line style and each element on one
 line, rather than putting some elements on multiple lines and some on a single
