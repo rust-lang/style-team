@@ -148,3 +148,58 @@ fn bar() {
     foo();
 }
 ```
+
+### Let else statements
+
+The `else` should have once space before and after. It can also be at the beginning of a line with a space after.
+
+If the `else` block only contains only an expression, the entire statement should be on one line if it fits.
+
+```rust
+let Some(1) = opt else { return };
+```
+
+If the line needs to be broken, prefer to break after the opening brace of the `else` block
+
+```rust
+let Some(1) = opt else {
+    return
+};
+```
+
+If the `else` and opening brace do not fit on the same line as the initializer,
+break before `else`. If a line begins with `else`, it should be indented at the same level as `let`,
+and the block should be on the same line if it fits.
+
+```rust
+let MyStruct { foo } = ({
+    statement;
+    fun()
+}) else { return };
+
+let Some(1) = opt
+else { return };
+
+let Some(1) = opt
+else {
+    println!("nope");
+    return;
+};
+```
+
+If the last line of the initializer expression is indented past `let`,
+the `else` should be broken to the next line.
+
+```rust
+let Foo { bar } = foo
+    .method()
+else {
+    return;
+};
+
+let MyStruct { foo: Some(1) } =
+    some_variable
+else {
+    return;
+};
+```
