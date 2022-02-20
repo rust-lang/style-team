@@ -156,7 +156,7 @@ move |arg1: i32, arg2: i32| -> i32 {
 ### Struct literals
 
 If a struct literal is *small* it may be formatted on a single line. If not,
-each field should be on it's own, block-indented line. There should be a
+each field should be on its own block-indented line. There should be a
 trailing comma in the multi-line form only. There should be a space after the
 colon only.
 
