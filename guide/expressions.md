@@ -118,7 +118,7 @@ fn main() {
 
 Don't put any extra spaces before the first `|` (unless the closure is prefixed
 by `move`); put a space between the second `|` and the expression of the
-closure. Between the `|`s, you should use function definition syntax, however,
+closure. Between the `|`s, you should use function definition syntax; however,
 elide types where possible.
 
 Use closures without the enclosing `{}`, if possible. Add the `{}` when you have
@@ -844,7 +844,7 @@ foo(|param| {
 })
 ```
 
-Such behaviour should extend recursively, however, tools may choose to limit the
+Such behaviour should extend recursively; however, tools may choose to limit the
 depth of nesting.
 
 Only where the multi-line sub-expression is a closure with an explicit block,
