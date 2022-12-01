@@ -42,9 +42,10 @@ The Rust style guide will generally match the latest version of the Rust style; 
 
 Whenever possible, style decisions should be made before a new construct is stabilized. However, style decisions shall not be considered a blocker for stabilization.
 
+[Style Guide]: https://github.com/rust-lang/fmt-rfcs/blob/master/guide/guide.md
+[#T-style]: https://rust-lang.zulipchat.com/#narrow/stream/346005-t-style
+
 [^1]: https://rust-lang.github.io/compiler-team/
 [^2]: https://lang-team.rust-lang.org/
 [^3]: https://std-dev-guide.rust-lang.org/
 [^4]: https://rust-lang.github.io/types-team/
-[Style Guide]: https://github.com/rust-lang/fmt-rfcs/blob/master/guide/guide.md
-[#T-style]: https://rust-lang.zulipchat.com/#narrow/stream/346005-t-style
