@@ -20,8 +20,6 @@
 * Josh Triplett ([@joshtriplett](https://github.com/joshtriplett))
 * Michael Goulet ([@compiler-errors](https://github.com/compiler-errors))
 
-## Membership
-
 The Rust style team shall have at least 3 members and at most 8. If the team has fewer than 3 members it shall seek new members as its primary focus.
 
 Members of the style team are nominated by existing members. All existing members of the team must affirmatively agree to the addition of a member, with zero objections; if there is any objection to a nomination, the new member will not be added. In addition, the team lead or another team member will check with the moderation team regarding any person nominated for membership, to provide an avenue for awareness of concerns or red flags.
