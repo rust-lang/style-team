@@ -15,7 +15,7 @@
 
 ## Membership
 
-* Lead: Caleb Cartwright ([@calebcartwright](https://github.com/calebcartwright))
+* Caleb Cartwright ([@calebcartwright](https://github.com/calebcartwright))
 * Jane Losare-Lusby ([@yaahc](https://github.com/yaahc))
 * Josh Triplett ([@joshtriplett](https://github.com/joshtriplett))
 * Michael Goulet ([@compiler-errors](https://github.com/compiler-errors))
