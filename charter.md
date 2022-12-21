@@ -9,9 +9,9 @@
 ## Domains
 
 1. [Style Guide]
-1. [T-style team repo](https://github.com/rust-lang/fmt-rfcs/)
-1. [#T-style] and #T-style/private zulip streams
-1. `rust-lang` issues with the `T-style` or `T-style-nominated` labels
+2. [T-style team repo](https://github.com/rust-lang/fmt-rfcs/)
+3. [#T-style] and #T-style/private zulip streams
+4. `rust-lang` issues with the `T-style` or `T-style-nominated` labels
 
 ## Membership
 
