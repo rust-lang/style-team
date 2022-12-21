@@ -11,7 +11,7 @@ The style team has various operational roles to delegate releated and ongoing wo
 
 ### Operational Lead
 
-* Current Holder: @calebcartwright
+* Current Holder: [@calebcartwright](https://github.com/calebcartwright)
 * Next Feedback Date: TODO
 
 In order to stay in touch with where we want to be heading in the future, we need leadership. A team leader is paying attention to the team’s operations in relation to the team’s aim. What needs to be done, who agreed to do it. What is in the future to decide?
@@ -24,7 +24,7 @@ Responsibilities:
 
 ### Facilitator
 
-* Current Holder: @yaahc
+* Current Holder: [@yaahc](https://github.com/yaahc)
 * Next Feedback Date: Wednesday 2023-02-01
 
 In order to be present with each other, we need a good facilitator .  Facilitators run meetings according to the format of meetings and decision making adopted by the group. Leader and facilitator are separate roles because facilitation and overseeing operations are different skill sets. They can be held by the same individual.
@@ -38,7 +38,7 @@ Responsibilities:
 
 ### Secretary
 
-* Current Holder: @calebcartwright
+* Current Holder: [@calebcartwright](https://github.com/calebcartwright)
 * Next Feedback Date: TODO
 
 In order to manage continuity with the team’s past, we need to have written records. The secretary manages the notes during the meeting, makes sure the minutes are distributed and accessible. The secretary also manages the records of the team and is the interpreter of policies.
