@@ -2,8 +2,8 @@
 
 This is a living document tracking the active policies of the style team. It is intended to fill a similar role to the books that many[^1] teams[^2] maintain[^3] independently[^4] with the intent that eventually these can be integrated into a central policy repository for all teams in the rust-lang organization.
 
-**Original RFC**: https://rust-lang.github.io/rfcs/3309-style-team.html
-**Charter**: TODO
+* **Original RFC**: https://rust-lang.github.io/rfcs/3309-style-team.html
+* **Charter**: TODO
 
 ## Meetings
 
