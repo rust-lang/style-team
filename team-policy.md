@@ -11,9 +11,9 @@ The style team meets weekly on wednesdays at 12:30am PST [(everytimezone link)](
 
 Unless otherwise noted, all of our meetings are public and open for anyone to attend. You will find the timing and event details on our [style team calendar](https://calendar.google.com/calendar/embed?src=d0564ed914a41cf4915bd5ebe6e2e4ec0ee1293fdc1d09d6f5bdb27d4f91c083%40group.calendar.google.com&ctz=America%2FLos_Angeles). We publish notes and minutes in written form in this github repository.
 
-### [Agenda, Backlog, and Minutes](https://hackmd.io/@yaah/B1GZrzv4j)
+### Agenda, Backlog, and Minutes
 
-The style team stores it's agendas, backlog, and meeting minutes in a single live hackmd document (rotating as necessary when the documents reach their length limit).
+The style team stores it's agendas, backlog, and meeting minutes in a single live [hackmd document](https://hackmd.io/@yaah/B1GZrzv4j) (rotating as necessary when the documents reach their length limit).
 
 The agenda should be prepared in advanced of each meeting by the facilitator with the assistance of the secretary and the lead. The lead is responsible for looking forward and adding agenda items such as new requests from other teams and users or new priorities and goals. The secretary is responsible for looking backwards and adding agenda items from existing work such as items from the backlog or policies that are due for review. The agenda proposal is then presented at the beginning of each meeting by the facilitator for the rest of the team to consent or object too.
 
