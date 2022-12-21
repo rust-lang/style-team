@@ -26,7 +26,9 @@ The Rust style team shall have at least 3 members and at most 8. If the team has
 
 Members of the style team are nominated by existing members. All existing members of the team must affirmatively agree to the addition of a member, with zero objections; if there is any objection to a nomination, the new member will not be added. In addition, the team lead or another team member will check with the moderation team regarding any person nominated for membership, to provide an avenue for awareness of concerns or red flags.
 
-TODO note about people being able to ask for an invite to be considered
+### Becoming a member of T-Style
+
+Contributors who believe they'd be a good fit for the style team are encouraged to request an invite to the team. The style team will consider all such requests as as a proposal to become a team member and provide clear feedback to the contributor if there are any objections so that any issues may be resolved and the contributor can apply again in the future. The style team will not consider having previously been rejected as a basis for future rejections.
 
 [Style Guide]: https://github.com/rust-lang/fmt-rfcs/blob/master/guide/guide.md
 [#T-style]: https://rust-lang.zulipchat.com/#narrow/stream/346005-t-style
