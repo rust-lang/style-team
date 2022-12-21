@@ -69,7 +69,7 @@ Agenda items are labeled according to their desired outcome. There are three pos
 
 We identify the desired outcome in advanced to avoid aimless discussions with unclear goals. The desired outcome can change during discussion as new information becomes available. It is the facilitators responsibility to notice when this happens and formally make the change in the desired outcome with consent from the rest of the team. Extra clarity can be gained if, for every agenda item, we end by measuring whether we have achieved the desired outcome. Facilitators can make it a habit to pause before moving to a new agenda item by assessing whether the desired outcome has been achieved and by asking the secretary to read out loud what has been written in the notes.
 
-The agenda backlog and minutes document is structured according to this template:
+The agenda backlog and minutes document is structured according to the following template:
 
 ```md
 # T-style Minutes
