@@ -5,6 +5,52 @@ This is a living document tracking the active policies of the style team. It is 
 * **Original RFC**: https://rust-lang.github.io/rfcs/3309-style-team.html
 * **Charter**: TODO
 
+## Operational Roles
+
+The style team has various operational roles to delegate releated and ongoing work to specific individuals, to clarify on our operations, and to coordinate sharing feedback with the members in those roles to enable iterative self improvement.
+
+### Operational Lead
+
+Current Holder: @calebcartwright
+Next Feedback Date: TODO
+
+In order to stay in touch with where we want to be heading in the future, we need leadership. A team leader is paying attention to the team’s operations in relation to the team’s aim. What needs to be done, who agreed to do it. What is in the future to decide?
+
+Responsibilities:
+
+* Pays attention to the operation of the team
+* Pays attention to the team members
+* Reports wider context to the team
+
+### Facilitator
+
+Current Holder: @yaahc
+Next Feedback Date: Wednesday 2023-02-01
+
+In order to be present with each other, we need a good facilitator .  Facilitators run meetings according to the format of meetings and decision making adopted by the group. Leader and facilitator are separate roles because facilitation and overseeing operations are different skill sets. They can be held by the same individual.
+
+Responsibilities:
+
+* Facilitates team meetings.
+* Pays attention to equivalence[^5] during meetings.
+* Supports planning of the agenda.
+* Distinguishes facilitator voice from team member voice.
+
+### Secretary
+
+Current Holder: @calebcartwright
+Next Feedback Date: TODO
+
+In order to manage continuity with the team’s past, we need to have written records. The secretary manages the notes during the meeting, makes sure the minutes are distributed and accessible. The secretary also manages the records of the team and is the interpreter of policies.
+
+Responsibilities:
+
+* Makes sure meeting minutes are taken, approved, and stored.
+* Keeps track of all documents of the team.
+* Interprets the meeting minutes in case of disagreement.
+* Supports planning the agenda from the backlog.
+    * Tracking when policies and roles are due for review.
+
 ## Meetings
 
 The style team meets weekly on wednesdays at 12:30am PST [(everytimezone link)](https://everytimezone.com/s/3f88a253) for a weekly video sync. Agendas are posted in the [#T-style] zulip stream. 
@@ -75,52 +121,6 @@ The style team wraps up the content part of our meetings 5-10 minutes before tea
 * “Is there anything you are carrying out of the meeting that you’d like to get off your chest now?”
 
 Meeting evaluations are an opportunity to learn from our meetings. We can either talk about content, process, or interpersonal dynamics. We utilize meeting evaluations to help ourselves inhabit a growth mindset. Our goal is to have meetings which are well-run, refreshing, connecting, and energizing. We achieve this goal by giving space for people to speak up about both the positive and negative aspects of how we're working together so that we can prioritize continuous improvement and positive connections.
-
-## Operational Roles
-
-The style team has various operational roles to delegate releated and ongoing work to specific individuals, to clarify on our operations, and to coordinate sharing feedback with the members in those roles to enable iterative self improvement.
-
-### Operational Lead
-
-Current Holder: @calebcartwright
-Next Feedback Date: TODO
-
-In order to stay in touch with where we want to be heading in the future, we need leadership. A team leader is paying attention to the team’s operations in relation to the team’s aim. What needs to be done, who agreed to do it. What is in the future to decide?
-
-Responsibilities:
-
-* Pays attention to the operation of the team
-* Pays attention to the team members
-* Reports wider context to the team
-
-### Facilitator
-
-Current Holder: @yaahc
-Next Feedback Date: Wednesday 2023-02-01
-
-In order to be present with each other, we need a good facilitator .  Facilitators run meetings according to the format of meetings and decision making adopted by the group. Leader and facilitator are separate roles because facilitation and overseeing operations are different skill sets. They can be held by the same individual.
-
-Responsibilities:
-
-* Facilitates team meetings.
-* Pays attention to equivalence[^5] during meetings.
-* Supports planning of the agenda.
-* Distinguishes facilitator voice from team member voice.
-
-### Secretary
-
-Current Holder: @calebcartwright
-Next Feedback Date: TODO
-
-In order to manage continuity with the team’s past, we need to have written records. The secretary manages the notes during the meeting, makes sure the minutes are distributed and accessible. The secretary also manages the records of the team and is the interpreter of policies.
-
-Responsibilities:
-
-* Makes sure meeting minutes are taken, approved, and stored.
-* Keeps track of all documents of the team.
-* Interprets the meeting minutes in case of disagreement.
-* Supports planning the agenda from the backlog.
-    * Tracking when policies and roles are due for review.
 
 ## Style Guide Evolution
 
