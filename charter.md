@@ -3,8 +3,8 @@
 ## Aims: Evolving the Rust Style over time
 
 1. Selecting styling for new Rust constructs
-1. Evolving the existing style over the course of Rust editions (without breaking backwards compatibility)
-1. Defining mechanisms to evolve the Rust style while taking backwards compatibility into account, such as via Rust editions or similar mechanisms
+2. Evolving the existing style over the course of Rust editions (without breaking backwards compatibility)
+3. Defining mechanisms to evolve the Rust style while taking backwards compatibility into account, such as via Rust editions or similar mechanisms
 
 ## Domains
 
