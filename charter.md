@@ -11,7 +11,7 @@
 1. [Style Guide]
 2. [T-style team repo](https://github.com/rust-lang/fmt-rfcs/)
 3. [#T-style] and #T-style/private zulip streams
-4. `rust-lang` issues with the `T-style` or `T-style-nominated` labels
+4. `rust-lang` issues with the `T-style` or `I-style-nominated` labels
 
 ## Membership
 
