@@ -27,7 +27,7 @@ Responsibilities:
 * Current Holder: [@yaahc](https://github.com/yaahc)
 * Next Feedback Date: Wednesday 2023-02-01
 
-In order to be present with each other, we need a good facilitator .  Facilitators run meetings according to the format of meetings and decision making adopted by the group. Leader and facilitator are separate roles because facilitation and overseeing operations are different skill sets. They can be held by the same individual.
+In order to be present with each other, we need a good facilitator.  The facilitator runs meetings according to the format of meetings and decision making adopted by the group. Leader and facilitator are separate roles because facilitation and overseeing operations are different skill sets. They can be held by the same individual.
 
 Responsibilities:
 
