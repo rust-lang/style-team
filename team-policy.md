@@ -7,7 +7,7 @@ This is a living document tracking the active policies of the style team. It is 
 
 ## Operational Roles
 
-The style team has various operational roles to delegate releated and ongoing work to specific individuals, to clarify on our operations, and to coordinate sharing feedback with the members in those roles to enable iterative self improvement.
+The style team has various operational roles to delegate related and ongoing work to specific individuals, to clarify on our operations, and to coordinate sharing feedback with the members in those roles to enable iterative self improvement.
 
 ### Operational Lead
 
