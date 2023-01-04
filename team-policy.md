@@ -5,6 +5,12 @@ This is a living document tracking the active policies of the style team. It is 
 * **Original RFC**: https://rust-lang.github.io/rfcs/3309-style-team.html
 * **Charter**: TODO
 
+## Style Guide Evolution
+
+The Rust style guide will generally match the latest version of the Rust style; the style team does not plan to maintain multiple branches of the style guide for different editions, in part because formatting for new constructs will apply to any edition supporting those constructs.
+
+Whenever possible, style decisions should be made before a new construct is stabilized. However, style decisions shall not be considered a blocker for stabilization.
+
 ## Operational Roles
 
 The style team has various operational roles to delegate related and ongoing work to specific individuals, to clarify on our operations, and to coordinate sharing feedback with the members in those roles to enable iterative self improvement.
@@ -121,12 +127,6 @@ The style team wraps up the content part of our meetings 5-10 minutes before tea
 * “Is there anything you are carrying out of the meeting that you’d like to get off your chest now?”
 
 Meeting evaluations are an opportunity to learn from our meetings. We can either talk about content, process, or interpersonal dynamics. We utilize meeting evaluations to help ourselves inhabit a growth mindset. Our goal is to have meetings which are well-run, refreshing, connecting, and energizing. We achieve this goal by giving space for people to speak up about both the positive and negative aspects of how we're working together so that we can prioritize continuous improvement and positive connections.
-
-## Style Guide Evolution
-
-The Rust style guide will generally match the latest version of the Rust style; the style team does not plan to maintain multiple branches of the style guide for different editions, in part because formatting for new constructs will apply to any edition supporting those constructs.
-
-Whenever possible, style decisions should be made before a new construct is stabilized. However, style decisions shall not be considered a blocker for stabilization.
 
 [Style Guide]: https://github.com/rust-lang/fmt-rfcs/blob/master/guide/guide.md
 [#T-style]: https://rust-lang.zulipchat.com/#narrow/stream/346005-t-style
