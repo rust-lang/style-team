@@ -59,7 +59,7 @@ Unless otherwise noted, all of our meetings are public and open for anyone to at
 
 ### Agenda, Backlog, and Minutes
 
-The style team stores it's agendas, backlog, and meeting minutes in a single live [hackmd document](https://hackmd.io/@yaah/B1GZrzv4j) (rotating as necessary when the documents reach their length limit).
+The style team stores its agendas, backlog, and meeting minutes in a single live [hackmd document](https://hackmd.io/@yaah/B1GZrzv4j) (rotating as necessary when the documents reach their length limit).
 
 The agenda should be prepared in advanced of each meeting by the facilitator with the assistance of the secretary and the lead. The lead is responsible for looking forward and adding agenda items such as new requests from other teams and users or new priorities and goals. The secretary is responsible for looking backwards and adding agenda items from existing work such as items from the backlog or policies that are due for review. The agenda proposal is then presented at the beginning of each meeting by the facilitator for the rest of the team to consent or object too.
 
