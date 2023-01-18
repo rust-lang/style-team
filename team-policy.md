@@ -69,6 +69,8 @@ The style team stores its agendas, backlog, and meeting minutes in a single live
 
 The agenda should be prepared in advanced of each meeting by the facilitator with the assistance of the secretary and the lead. The lead is responsible for looking forward and adding agenda items such as new requests from other teams and users or new priorities and goals. The secretary is responsible for looking backwards and adding agenda items from existing work such as items from the backlog or policies that are due for review. The agenda proposal is then presented at the beginning of each meeting by the facilitator for the rest of the team to consent or object too.
 
+Consent not needed to add to items to the backlog, anybody is welcome to add items to the backlog, but consent needed to move from backlog to agenda (since agendas themselves require consent). An item being present on the backlog does not represent a commitment by the style team.
+
 #### Inform / Explore / Decide agenda item classification
 
 Agenda items are labeled according to their desired outcome. There are three possible outcomes for any given agenda item, inform, explore, or decide. Each of these outcomes builds upon the previous outcomes. In order to explore an item it must first be understood, and in order to make a decision one must both understand and explore the item first. Inform is used for things such as status updates, and usually involves first a report, followed by a round of clarifying questions. Explore is used for situations where one would like feedback on a potential issue or proposal, and usually involves reaction rounds. Decide is used when the team must reach a decision as a group, and it is usually achieved via a consensus round.
@@ -105,7 +107,9 @@ Meeting Link: https://meet.jit.si/t-style-style-team-task-force
 ### Agenda
 
 * (inform) bullet point list of proposed agenda items (labeled either inform, explore, or decide)
+* Review Action Items
 * Meeting Check-out
+    * Do not record in minutes, exceptions can be made with consent of team
 
 ### Minutes
 
@@ -127,6 +131,8 @@ The style team wraps up the content part of our meetings 5-10 minutes before tea
 * “Is there anything you are carrying out of the meeting that you’d like to get off your chest now?”
 
 Meeting evaluations are an opportunity to learn from our meetings. We can either talk about content, process, or interpersonal dynamics. We utilize meeting evaluations to help ourselves inhabit a growth mindset. Our goal is to have meetings which are well-run, refreshing, connecting, and energizing. We achieve this goal by giving space for people to speak up about both the positive and negative aspects of how we're working together so that we can prioritize continuous improvement and positive connections.
+
+Meeting check-outs are considered private and internal to the style team and are not recorded as part of our minutes. Exceptions to this can be made via an operational consent decision by the team, and are often useful in cases such as when new backlog or action items come up during the check-out.
 
 [Style Guide]: https://github.com/rust-lang/fmt-rfcs/blob/master/guide/guide.md
 [#T-style]: https://rust-lang.zulipchat.com/#narrow/stream/346005-t-style
