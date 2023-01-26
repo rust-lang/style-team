@@ -42,18 +42,18 @@ Responsibilities:
 * Supports planning of the agenda.
 * Distinguishes facilitator voice from team member voice.
 
-### Secretary
+### Scribe
 
 * Current Holder: [@calebcartwright](https://github.com/calebcartwright)
 * Next Feedback Date: TODO
 
-In order to manage continuity with the team’s past, we need to have written records. The secretary manages the notes during the meeting, makes sure the minutes are distributed and accessible. The secretary also manages the records of the team and is the interpreter of policies.
+In order to manage continuity with the team’s past, we need to have written records. The scribe manages the notes during the meeting, makes sure the minutes are distributed and accessible.
 
 Responsibilities:
 
 * Makes sure meeting minutes are taken, approved, and stored.
 * Keeps track of all documents of the team.
-* Interprets the meeting minutes in case of disagreement.
+* Default interpreter of meeting minutes in cases of disagreement.
 * Supports planning the agenda from the backlog.
     * Tracking when policies and roles are due for review.
 
@@ -67,7 +67,7 @@ Unless otherwise noted, all of our meetings are public and open for anyone to at
 
 The style team stores its agendas, backlog, and meeting minutes in a single live [hackmd document](https://hackmd.io/@yaah/B1GZrzv4j) (rotating as necessary when the documents reach their length limit).
 
-The agenda should be prepared in advanced of each meeting by the facilitator with the assistance of the secretary and the lead. The lead is responsible for looking forward and adding agenda items such as new requests from other teams and users or new priorities and goals. The secretary is responsible for looking backwards and adding agenda items from existing work such as items from the backlog or policies that are due for review. The agenda proposal is then presented at the beginning of each meeting by the facilitator for the rest of the team to consent or object too.
+The agenda should be prepared in advanced of each meeting by the facilitator with the assistance of the scribe and the lead. The lead is responsible for looking forward and adding agenda items such as new requests from other teams and users or new priorities and goals. The scribe is responsible for looking backwards and adding agenda items from existing work such as items from the backlog or policies that are due for review. The agenda proposal is then presented at the beginning of each meeting by the facilitator for the rest of the team to consent or object too.
 
 Consent not needed to add to items to the backlog, anybody is welcome to add items to the backlog, but consent needed to move from backlog to agenda (since agendas themselves require consent). An item being present on the backlog does not represent a commitment by the style team.
 
@@ -75,7 +75,7 @@ Consent not needed to add to items to the backlog, anybody is welcome to add ite
 
 Agenda items are labeled according to their desired outcome. There are three possible outcomes for any given agenda item, inform, explore, or decide. Each of these outcomes builds upon the previous outcomes. In order to explore an item it must first be understood, and in order to make a decision one must both understand and explore the item first. Inform is used for things such as status updates, and usually involves first a report, followed by a round of clarifying questions. Explore is used for situations where one would like feedback on a potential issue or proposal, and usually involves reaction rounds. Decide is used when the team must reach a decision as a group, and it is usually achieved via a consensus round.
 
-We identify the desired outcome in advance to avoid aimless discussions with unclear goals. The desired outcome can change during discussion as new information becomes available. It is the facilitator's responsibility to notice when this happens and formally make the change in the desired outcome with consent from the rest of the team. Extra clarity can be gained if, for every agenda item, we end by measuring whether we have achieved the desired outcome. Facilitators can make it a habit to pause before moving to a new agenda item by assessing whether the desired outcome has been achieved and by asking the secretary to read out loud what has been written in the notes.
+We identify the desired outcome in advance to avoid aimless discussions with unclear goals. The desired outcome can change during discussion as new information becomes available. It is the facilitator's responsibility to notice when this happens and formally make the change in the desired outcome with consent from the rest of the team. Extra clarity can be gained if, for every agenda item, we end by measuring whether we have achieved the desired outcome. Facilitators can make it a habit to pause before moving to a new agenda item by assessing whether the desired outcome has been achieved and by asking the scribe to read out loud what has been written in the notes.
 
 The agenda backlog and minutes document is structured according to the following template:
 
@@ -94,7 +94,7 @@ Meeting Link:
 
 - [ ] owner: check list of items that are completed or assumed to be complete
 - [x] owner: items are checked off once they've been reviewed in a meeting, confirmed complete, and given any relevant final status updates.
-- [x] owner: after a meeting the items that were checked off are moved into the `#### Completed Action Items` section of the meeting they were reviewed in by the secretary
+- [x] owner: after a meeting the items that were checked off are moved into the `#### Completed Action Items` section of the meeting they were reviewed in by the scribe
 
 ## Backlog
 
