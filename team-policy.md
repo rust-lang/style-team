@@ -82,7 +82,7 @@ The agenda backlog and minutes document is structured according to the following
 ```md
 # T-style Minutes
 
-Meeting Link: https://meet.jit.si/t-style-style-team-task-force
+Meeting Link: 
 
 ## Action Items
 
