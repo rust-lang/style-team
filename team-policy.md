@@ -59,7 +59,7 @@ Responsibilities:
 
 ## Meetings
 
-The style team meets weekly on wednesdays at 12:30pm PST [(everytimezone link)](https://everytimezone.com/s/3f88a253) for a weekly video sync. Agendas are posted in the [#T-style] zulip stream. 
+The style team meets weekly on Wednesdays at 12:30pm PST [(everytimezone link)](https://everytimezone.com/s/3f88a253) for a weekly video sync. Agendas are posted in the #T-style zulip stream. 
 
 Unless otherwise noted, all of our meetings are public and open for anyone to attend. You will find the timing and event details on our [style team calendar](https://calendar.google.com/calendar/embed?src=d0564ed914a41cf4915bd5ebe6e2e4ec0ee1293fdc1d09d6f5bdb27d4f91c083%40group.calendar.google.com&ctz=America%2FLos_Angeles). We publish notes and minutes in written form in this github repository.
 
