@@ -87,3 +87,28 @@ principles (in priority order):
 
 To see how these principles were decided, see
 [issue 4](https://github.com/rust-lang-nursery/fmt-rfcs/issues/4).
+
+## TODO: Rework readme
+
+For now moving this from the charter.md, will include smoothly in the future
+
+### Membership
+
+* Caleb Cartwright
+    * Github: ([@calebcartwright](https://github.com/calebcartwright))
+    * Contact: [Zulip](https://rust-lang.zulipchat.com/#narrow/pm-with/320317-Caleb-Cartwright)
+* Jane Losare-Lusby
+    * Pronouns: she/her
+    * Github: ([@yaahc](https://github.com/yaahc))
+    * Contact: [Zulip](https://rust-lang.zulipchat.com/#narrow/pm-with/220273-Jane-Losare-Lusby)
+    * Spoken Languages: English
+    * Timezone: PST (GMT-8)
+    * Other Project Roles
+        * Error Handling Project Group: Lead
+        * Rust Foundation: Project Director of Collaboration
+* Josh Triplett
+    * Github: ([@joshtriplett](https://github.com/joshtriplett))
+    * Contact: [Zulip](https://rust-lang.zulipchat.com/#narrow/pm-with/239881-Josh-Triplett)
+* Michael Goulet
+    * Github: ([@compiler-errors](https://github.com/compiler-errors))
+    * Contact: [Zulip](https://rust-lang.zulipchat.com/#narrow/pm-with/426609-Michael-Goulet-(compiler-errors))
