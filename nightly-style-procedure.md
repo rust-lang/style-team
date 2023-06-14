@@ -1,3 +1,8 @@
+The style guide may or may not prescribe formatting behavior for nightly syntax
+in preparation for a feature's eventual stabilization, and to record in
+principal the behavior implemented by rustfmt around nightly syntax, but that
+behavior is not binding until the feature is stabilized.
+
 Initial PR(s) implementing new syntax filed against rust-lang/rust should
 generally leave the rustfmt subtree untouched. In cases that that need to
 modify rustfmt (for example, to fix compiler errors that come from adding
@@ -27,4 +32,4 @@ the feature.
 Feature stabilization should be blocked on confirmation and codification of
 formatting behavior. At this point, T-style may also propose alternative
 formatting at the time of stabilization, with any breaking changes weighted
-according to the principle stated above.
+according to the breaking changes principle stated above.
