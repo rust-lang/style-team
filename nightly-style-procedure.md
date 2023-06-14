@@ -1,6 +1,6 @@
 The style guide may or may not prescribe formatting behavior for nightly syntax
-in preparation for a feature's eventual stabilization, and to record in
-principal the behavior implemented by rustfmt around nightly syntax, but that
+in preparation for a feature's eventual stabilization or to reflect actual
+the behavior implemented by rustfmt around nightly syntax, but that
 behavior is not binding until the feature is stabilized.
 
 Initial PR(s) implementing new syntax filed against rust-lang/rust should
