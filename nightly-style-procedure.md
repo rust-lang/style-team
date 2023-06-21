@@ -1,7 +1,8 @@
 The style guide may or may not prescribe formatting behavior for nightly syntax
-in preparation for a feature's eventual stabilization or to reflect actual
-the behavior implemented by rustfmt around nightly syntax, but that
-behavior is not binding until the feature is stabilized.
+in the "nightly" chapter in preparation for a feature's eventual stabilization
+or to reflect actual the behavior implemented by rustfmt around nightly syntax.
+This behavior is not binding until the feature is stabilized and the text is moved
+into the appropriate section of the style guide.
 
 Initial PR(s) implementing new syntax filed against rust-lang/rust should
 generally leave the rustfmt subtree untouched. In cases that that need to
