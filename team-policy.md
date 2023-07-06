@@ -71,6 +71,12 @@ The agenda should be prepared in advanced of each meeting by the facilitator wit
 
 Consent not needed to add to items to the backlog, anybody is welcome to add items to the backlog, but consent needed to move from backlog to agenda (since agendas themselves require consent). An item being present on the backlog does not represent a commitment by the style team.
 
+#### Interrupting the Agenda
+
+The style team acknowledges that urgent needs may arise during the meeting. To address these needs, participants may interrupt the meeting by speaking up and immediately saying "Point of Order." This signals to the meeting facilitator and other participants that the following point is not an out-of-order interruption but rather an urgent need that must take priority. This tool is designed for meta-level concerns that take priority over the current discussion, such as the scribe interrupting the meeting to address issues preventing the recording of minutes (and stopping the discussion until they can resume recording minutes), or a team member interrupting a discussion to raise questions of time bounds or team scope.
+
+The meeting facilitator will then pause the current discussion, allow the participant to raise the point of order to state their concern and allow the team to address that point of order. After resolving the urgent matter, the facilitator will resume the previous discussion or return to the agenda. This policy is intended to ensure that the team can address urgent issues promptly without unnecessarily interrupting the flow of the meeting.
+
 #### Inform / Explore / Decide agenda item classification
 
 Agenda items are labeled according to their desired outcome. There are three possible outcomes for any given agenda item, inform, explore, or decide. Each of these outcomes builds upon the previous outcomes. In order to explore an item it must first be understood, and in order to make a decision one must both understand and explore the item first. Inform is used for things such as status updates, and usually involves first a report, followed by a round of clarifying questions. Explore is used for situations where one would like feedback on a potential issue or proposal, and usually involves reaction rounds. Decide is used when the team must reach a decision as a group, and it is usually achieved via a consensus round.
