@@ -101,6 +101,9 @@ Meeting Link:
 - [ ] owner: check list of items that are completed or assumed to be complete
 - [x] owner: items are checked off once they've been reviewed in a meeting, confirmed complete, and given any relevant final status updates.
 - [x] owner: after a meeting the items that were checked off are moved into the `#### Completed Action Items` section of the meeting they were reviewed in by the scribe
+### Granularity
+
+Action items should not generally list individual feedback/response comments within GitHub threads. An action item should generally be at the level of a GitHub PR, and people can look at the GitHub PR to find out its current status. That status may affect whether the action item is blocked, or who needs to look at it, or whether there are aspects of the action item to discuss in a meeting.
 
 ## Backlog
 
