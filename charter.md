@@ -26,4 +26,19 @@ Members of the style team are nominated by existing members. All existing member
 
 Contributors who believe they'd be a good fit for the style team are encouraged to request an invite[^1] to the team, by reaching out via Zulip private message to one or more team members. The style team will consider all such requests as as a proposal to become a team member and provide clear feedback to the contributor if there are any objections so that any issues may be resolved and the contributor can apply again in the future. The style team will not consider having previously been rejected as a basis for future rejections.
 
+### Team Member Characteristics
+
+The style team is committed to building a diverse and capable team comprising individuals who possess the following characteristics:
+
+1. Representation and Affiliation: The style team values representation from various parts of the Rust organization and ecosystem. We aim to include members affiliated with different areas of the rust ecosystem as best as possible, to ensure a well-rounded perspective.
+2. Familiarity with Rust: Prospective members should have a general familiarity with Rust, including a solid understanding of its constructs, how they interact, and the overall language ecosystem. This knowledge is crucial for making informed decisions regarding style and formatting guidelines.
+3. Interest in Rust Style: Members should have a genuine interest in Rust style and a willingness to contribute to the team's efforts. It is important that members are not solely focused on advocating for their personal style preferences but are dedicated to promoting a collective and consensus-based approach.
+4. Effective Collaboration Skills: Successful candidates will have a proven track record of effective collaboration, showcasing their ability to work together with others, consider diverse perspectives, navigate conflicts, and address emotional challenges in a constructive manner.
+5. Familiarity with Rust Project: Familiarity with the Rust project's structure, culture, and expectations upon maintainers is desirable. This knowledge helps members navigate the ecosystem more effectively and align their style decisions with the project's broader goals.
+6. Consent to Principles and Aims: Members are expected to align with and consent to the principles and aims of the style team, as outlined in the Rust style guide principles (https://github.com/rust-lang/rust/blob/master/src/doc/style-guide/src/principles.md) and the style team's charter (https://github.com/rust-lang/style-team/blob/style-policy/charter.md).
+7. Pragmatic Approach: Members should prioritize pragmatism over dogmatism, even when dealing with style and formatting aspects they feel particularly strongly about. The ability to make practical and reasonable decisions that benefit the community at large is essential.
+8. Openness to Change and Learning: Members should demonstrate a willingness to seek out and receive new information, be open to changing their opinions based on evidence and rationale, and adapt their perspectives accordingly.
+9. Effective Communication in Charged Conversations: The ability to navigate charged conversations and respond constructively and empathetically to evocative commentary is important. Members should be able to handle passionate discussions about code style, recognize miscommunication and misunderstandings, and promote empathy and listening when discussing matters within the purview of the style team.
+10. Interest in Language and Syntax: Members should show interest in tracking changes to the Rust language and syntax. Keeping up-to-date with the latest developments helps inform style decisions
+
 [^1]: We suggest reaching out via zulip DM to one of the current team members, and contacting the lead by default if you're unsure who to reach out to.
