@@ -11,6 +11,21 @@ The Rust style guide will generally match the latest version of the Rust style; 
 
 Whenever possible, style decisions should be made before a new construct is stabilized. However, style decisions shall not be considered a blocker for stabilization.
 
+## Policy Review Process
+
+To maintain the effectiveness and relevance of our policies, the style team implements a policy review process. The following guidelines outline how we conduct policy reviews:
+
+1. **Associated Review Dates**: Each policy should have a designated review date documented alongside the policy. These review dates are also added to the team's backlog for easy tracking and planning.
+2. **Consideration Factors**: When selecting review dates for policies, we consider several factors. These include:
+  1. **Confidence Level**: If a policy has recently changed or is relatively new, we opt for a shorter review period. This allows us to course correct quickly if needed.
+  2. **Stability and Effectiveness**: Policies that have remained unchanged for a considerable period and have proven effective can have longer review periods. This prevents unnecessary time spent on policies that are working well.
+3. **Integration into Regular Meetings**: Policy reviews are treated as regular agenda items during our team meetings. They are discussed and evaluated alongside other topics of importance.
+4. Review Process: Policy reviews should use a discussion approach that encourages each team member to provide feedback regarding the policy under review and creates a constructive environment where everyone is heard equally. Our current process is a *round*, in which each person is heard once before anyone responds or chimes in a second time. We start with the prompt, "How effective has this policy been in your experience? Is it serving its intended purpose? How has it worked well, and how can it be improved? Are there other issues with the policy that we should consider?".
+5. **Regular Review Cadence**: We review our policies regularly to identify any issues before they escalate into urgent problems proactively. By conducting these reviews systematically, we ensure that our policies remain up-to-date and aligned with our evolving needs.
+  1. **Default disposition**: In organizations without a policy review process, policies often remain in effect by default until explicitly rescinded. The policy review process partly reverses that default disposition: policies require regular review and must be renewed to remain in effect. (Such review and renewal still consider all of these other factors, such as the degree of previously established confidence in the policy and its stability over time.)
+
+By adhering to this policy review process, we aim to maintain a high standard of quality and relevance in our style team policies.
+
 ## Operational Roles
 
 The style team has various operational roles to delegate related and ongoing work to specific individuals, to clarify on our operations, and to coordinate sharing feedback with the members in those roles to enable iterative self improvement.
