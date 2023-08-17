@@ -3,7 +3,7 @@
 This is a living document tracking the active policies of the style team. It is intended to fill a similar role to the books that many[^1] teams[^2] maintain[^3] independently[^4]. If in the future Rust establishes central linking/indexing/aggregating of policies, these will need to appear there.
 
 * **Original RFC**: https://rust-lang.github.io/rfcs/3309-style-team.html
-* **Charter**: https://github.com/rust-lang/fmt-rfcs/blob/master/charter.md
+* **Charter**: https://github.com/rust-lang/style-team/blob/HEAD/charter.md
 
 ## Style Guide Evolution
 
@@ -158,7 +158,7 @@ Meeting evaluations are an opportunity to learn from our meetings. We can either
 
 Meeting check-outs are considered private and internal to the style team and are not recorded as part of our minutes. Exceptions to this can be made via an operational consent decision by the team, and are often useful in cases such as when new backlog or action items come up during the check-out.
 
-[Style Guide]: https://github.com/rust-lang/fmt-rfcs/blob/master/guide/guide.md
+[Style Guide]: https://github.com/rust-lang/rust/tree/HEAD/src/doc/style-guide/src
 [#T-style]: https://rust-lang.zulipchat.com/#narrow/stream/346005-t-style
 
 [^1]: https://rust-lang.github.io/compiler-team/
