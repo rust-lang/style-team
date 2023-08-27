@@ -1,6 +1,6 @@
 # Rust style team repository
 
-This is the home of the Rust style team. The style team is responsible for
+This is the home of the [Rust style team](https://www.rust-lang.org/governance/teams/lang#Style%20team). The style team is responsible for
 determining the default Rust style, including styling for new language
 constructs, as well as evolving the Rust style over time.
 
