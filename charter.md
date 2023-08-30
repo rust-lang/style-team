@@ -39,6 +39,6 @@ The style team is committed to building a diverse and capable team comprising in
 7. Pragmatic Approach: Members should prioritize pragmatism over dogmatism, even when dealing with style and formatting aspects they feel particularly strongly about. The ability to make practical and reasonable decisions that benefit the community at large is essential.
 8. Openness to Change and Learning: Members should demonstrate a willingness to seek out and receive new information, be open to changing their opinions based on evidence and rationale, and adapt their perspectives accordingly.
 9. Effective Communication in Charged Conversations: Members will need to carefully navigate charged conversations and evocative feedback, and respond constructively and with empathy, to each other and to the community. Members should be able to handle passionate discussions about code style, recognize miscommunication and misunderstandings, and promote empathy and listening.
-10. Interest in Language and Syntax: Members should show interest in tracking changes to the Rust language and syntax. Keeping up-to-date with the latest developments helps inform style decisions
+10. Interest in Language and Syntax: Members should show interest in tracking changes to the Rust language and syntax. Keeping up-to-date with the latest developments helps inform style decisions.
 
 [^1]: We suggest reaching out via zulip DM to one of the current team members, and contacting the lead by default if you're unsure who to reach out to.
